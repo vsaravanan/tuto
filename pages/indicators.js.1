@@ -1,0 +1,28 @@
+import { useEffect, useState } from 'react'
+
+const Indicators = () => {
+  const url = 'http://localhost:4000/posts'
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch(url)
+      const json = await res.json()
+      setPosts(json)
+    }
+    fetchData()
+  }, [setPosts])
+
+  return (
+    <ul>
+      {posts?.map(post => (
+        <li key={post.id}>
+          <h2>{post.title}</h2>
+          <p>{post.body}</p>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+export default Indicators
