@@ -1,11 +1,7 @@
-import { delay, myTimeout } from '@/lib/utils'
-import { setFulfilled, setLoading } from '@/redux/postSlice'
+import useFetch from '@/lib/useFetch'
 import {
-  cFinished,
   cIndicator,
   cLayout,
-  cProgress,
-  cStart,
   setError,
   setFinished,
   setProgress,
@@ -13,7 +9,6 @@ import {
 } from '@/redux/statusoSlice'
 import { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-// import { setLoading } from '@/redux/postSlice'
 
 const Indicators = () => {
   const url = 'http://localhost:4000/posts'
@@ -21,36 +16,24 @@ const Indicators = () => {
   const { raw } = useSelector(state => state.statuso)
   const dispatch = useDispatch()
 
-  const popraw = useCallback(data => {
-    let wrapdata = { data, key: cIndicator }
+  const progress = useCallback(() => dispatch(setProgress(cLayout)), [])
+
+  const popraw = useCallback((data, key) => {
+    let wrapdata = { data, key }
     dispatch(setRaw(wrapdata))
   }, [])
 
   const finished = useCallback(() => dispatch(setFinished(cLayout)), [])
+  const erroro = useCallback(() => dispatch(setError(cLayout)), [])
 
-  const fetchData = async () => {
-    try {
-      dispatch(setProgress(cLayout))
-      const res = await fetch(url)
-      const json = await res.json()
+  const myFetch = (method, url, body) =>
+    useFetch(method, url, body, cLayout, cIndicator, statuso, progress, popraw, finished, erroro)
 
-      popraw(json)
-
-      setTimeout(() => {
-        finished() // otherwise it is getting cyclic
-      }, 500)
-    } catch (error) {
-      setError(cLayout)
-    }
-  }
-
-  // debugger
   useEffect(() => {
-    if (statuso[cLayout] === cProgress) return
-    fetchData()
-  }, [dispatch, raw, popraw, finished]) // progress, erroro
+    myFetch('GET', url, {})
+  }, [url, progress, popraw, finished])
 
-  const posts = raw['indicator']
+  const posts = raw[cIndicator]
 
   return (
     <>
