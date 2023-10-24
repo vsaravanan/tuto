@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import ArticleIcon from '@mui/icons-material/Article'
 import CollapsIcon from '@mui/icons-material/ExpandCircleDown'
 import HomeIcon from '@mui/icons-material/Home'
@@ -9,12 +9,15 @@ import LogoIcon from '@mui/icons-material/Diamond'
 import LogoutIcon from '@mui/icons-material/Logout'
 import UsersIcon from '@mui/icons-material/People'
 import VideosIcon from '@mui/icons-material/SwitchVideo'
+import HorizontalRule from '@mui/icons-material/HorizontalRule'
+import Image from 'next/image'
 
 const menuItems = [
   { id: 1, label: 'Home', icon: HomeIcon, link: '/' },
   { id: 2, label: 'Manage Posts', icon: ArticleIcon, link: '/posts' },
   { id: 3, label: 'Manage Users', icon: UsersIcon, link: '/users' },
   { id: 4, label: 'Manage Tutorials', icon: VideosIcon, link: '/tutorials' },
+  { id: 5, label: 'Learn indicators', icon: HorizontalRule, link: '/indicators' },
 ]
 
 const Sidebar = () => {
@@ -29,14 +32,14 @@ const Sidebar = () => {
   )
 
   const wrapperClasses = classNames(
-    'h-screen px-4 pt-8 pb-4 bg-light flex justify-between flex-col',
+    'h-screen px-2 pt-8 pb-4 bg-light flex justify-between flex-col',
     {
       ['w-80']: !toggleCollapse,
       ['w-20']: toggleCollapse,
     },
   )
 
-  const collapseIconClasses = classNames('p-4 rounded bg-light-lighter absolute right-0', {
+  const collapseIconClasses = classNames('p-8 rounded bg-light-lighter absolute right-0', {
     'rotate-180': toggleCollapse,
   })
 
@@ -57,6 +60,19 @@ const Sidebar = () => {
     setToggleCollapse(!toggleCollapse)
   }
 
+  //update the size of the logo when the size of the screen changes
+  const [width, setWidth] = useState(0)
+
+  const updateWidth = () => {
+    const newWidth = window.innerWidth
+    setWidth(newWidth)
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', updateWidth)
+    updateWidth()
+  }, [])
+
   return (
     <div
       className={wrapperClasses}
@@ -66,14 +82,20 @@ const Sidebar = () => {
     >
       <div className='flex flex-col'>
         <div className='flex items-center justify-between relative'>
-          <div className='flex items-center pl-1 gap-4'>
-            <LogoIcon />
+          <div className='flex items-center pl-10 gap-4'>
+            {/* <LogoIcon /> */}
             <span
               className={classNames('mt-2 text-lg font-medium text-text', {
                 hidden: toggleCollapse,
               })}
             >
-              Logo
+              <Image
+                src='/saravan_photo_smalla.jpg'
+                alt='Logo'
+                width={width < 1024 ? '60' : '100'}
+                height={width < 1024 ? '30' : '50'}
+                className='relative'
+              />{' '}
             </span>
           </div>
           {isCollapsible && (
@@ -83,7 +105,7 @@ const Sidebar = () => {
           )}
         </div>
 
-        <div className='flex flex-col items-start mt-24'>
+        <div className='flex flex-col items-start mt-8'>
           {menuItems.map(({ icon: Icon, ...menu }) => {
             const classes = getNavItemClasses(menu)
             return (
@@ -101,16 +123,15 @@ const Sidebar = () => {
               </div>
             )
           })}
+          <div className={`${getNavItemClasses({})} px-3 py-4`}>
+            <div style={{ width: '2.5rem' }}>
+              <LogoutIcon />
+            </div>
+            {!toggleCollapse && (
+              <span className={classNames('text-md font-medium text-text-light')}>Logout</span>
+            )}
+          </div>
         </div>
-      </div>
-
-      <div className={`${getNavItemClasses({})} px-3 py-4`}>
-        <div style={{ width: '2.5rem' }}>
-          <LogoutIcon />
-        </div>
-        {!toggleCollapse && (
-          <span className={classNames('text-md font-medium text-text-light')}>Logout</span>
-        )}
       </div>
     </div>
   )
