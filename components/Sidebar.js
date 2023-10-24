@@ -110,7 +110,11 @@ const Sidebar = () => {
             const classes = getNavItemClasses(menu)
             return (
               <div className={classes}>
-                <Link href={menu.link} className='flex py-4 px-3 items-center w-full h-full'>
+                <Link
+                  href={menu.link}
+                  className={`flex py-4 px-3 items-center w-full h-full
+                  sidebar__link ${menu.link === router.pathname ? 'sidebar__link--active' : ''}`}
+                >
                   <div style={{ width: '2.5rem' }}>
                     <Icon />
                   </div>
