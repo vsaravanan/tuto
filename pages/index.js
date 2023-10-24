@@ -10,8 +10,6 @@ import useFetch from 'react-fetch-hook'
 import { cLayout, setProgress, setFinished } from '@/redux/statusoSlice'
 import { useRouter } from 'next/router'
 
-const fetcher = url => fetch(url).then(res => res.json())
-
 const Home = () => {
   const url = 'http://localhost:4000/posts'
   const dispatch = useDispatch()

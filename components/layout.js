@@ -5,6 +5,7 @@ import ErrorComponent from 'components/ErrorComponent'
 import Header from 'components/header'
 import Footer from 'components/footer'
 import { cError, cFinished, cIdle, cLayout, cProgress } from '@/redux/statusoSlice'
+import { Sidebar } from 'components/SideBar'
 
 const Layout = ({ children }) => {
   const { isLoading, error } = useSelector(state => state.posts)
@@ -13,16 +14,20 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Header />
-      <p>{` statuso ${statuso?.layout}`}</p>
-      <p>{` isLoading ${isLoading}`}</p>
-      <p>{`error ${error}`}</p>
+      <div>
+        <Sidebar></Sidebar>
+        <div>
+          <p>{` statuso ${statuso?.layout}`}</p>
+          <p>{` isLoading ${isLoading}`}</p>
+          <p>{`error ${error}`}</p>
 
-      {isLoading || statuso?.layout === cProgress ? <LoadingSpinner /> : ''}
+          {isLoading || statuso?.layout === cProgress ? <LoadingSpinner /> : ''}
 
-      {error || statuso?.layout === cError ? <ErrorComponent /> : <main>{children}</main>}
+          {error || statuso?.layout === cError ? <ErrorComponent /> : <main>{children}</main>}
+        </div>
 
-      <main>{children}</main>
-      <Footer />
+        <Footer />
+      </div>
     </div>
   )
 }
