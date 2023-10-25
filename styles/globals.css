@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import '@/components/TreeView/TreeView.module.css' screen; 
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -31,5 +32,5 @@ iframe {
   height: 10000px;
   border: 0;
   overflow: hidden;
-  background-color: white;
+  background-color: rgb(11, 11, 11);
 }

@@ -11,7 +11,6 @@ const Layout = ({ children }) => {
   const { isLoading, error } = useSelector(state => state.posts)
   const { statuso } = useSelector(state => state.statuso)
   const { content } = useSelector(state => state.content)
-  console.log(content)
 
   let listurl = process.env.NEXT_PUBLIC_listskills
 
@@ -59,6 +58,3 @@ const Layout = ({ children }) => {
 }
 
 export default Layout
-{
-  /* {spin ? <LoadingSpinner /> : pageerror ? <ErrorComponent /> : <main>{children}</main>} */
-}
