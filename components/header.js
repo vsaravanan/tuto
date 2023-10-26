@@ -30,8 +30,8 @@ const Header = () => {
           <div>
             Saravanan personal blog. Developer in java, springboot, reactjs, nextjs, linux, crypto
             <br></br>
-            This website is built on google cloud, linux, nginx, reactjs, nextjs, reduxtoolkit and
-            with the help of ChatGPT 😊
+            This website is built on google cloud, linux, nginx, pm2, reactjs, nextjs, reduxtoolkit
+            and with the help of ChatGPT 😊
           </div>
 
           <div className='flex flex-row justify-center sm:justify-evenly align-middle gap-4 text-white text-4xl lg:text-5xl'>
