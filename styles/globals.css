@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import '@/components/TreeView/TreeView.module.css' screen; 
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -26,19 +27,50 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-
-.sidebar__link {
-  display: inline-block;
-  font-size: 1rem;
-  text-decoration: none;
-  color: #92acaf;
-  padding: 0.8rem 1rem;
-  display: flex;
-  background-color: var(--color-sidebar-item);
-  margin-bottom: 1rem;
-  border-radius: 0.8rem;
+iframe {
+  width: 100%;
+  height: 10000px;
+  border: 0;
+  overflow: hidden;
+  background-color: rgb(11, 11, 11);
 }
-.sidebar__link--active {
-  color: #fff;
-  background-color: #10b981;
+
+
+.sidebar-open  {
+
+  display: block;
+
+}
+
+.sidebar-close {
+
+  display: none;
+}
+
+span.sidebar {
+  padding: 1px 1px 1px 4px;
+
+  text-decoration: none;
+  display: block;
+  transition: 0.3s;
+}
+
+span.sidebar:hover {
+  color: #765d5d;
+}
+
+.openbtn {
+  font-size: 30px;
+  cursor: pointer;
+  background-color: bg-slate-600;
+  color: black;
+  padding: 1px 10px;
+  border: none;
+  margin-left: 1vw;
+}
+
+.openbtn:hover {
+  background-color: rgb(33, 54, 66);
+  color: white;
+
 }
