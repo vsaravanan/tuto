@@ -10,7 +10,8 @@ import { Sidebar } from 'components/SideBar'
 const Layout = ({ children }) => {
   const { isLoading, error } = useSelector(state => state.posts)
   const { statuso } = useSelector(state => state.statuso)
-  const { content } = useSelector(state => state.content)
+  const { content, showSidebar } = useSelector(state => state.util)
+  const show_sidebar = showSidebar ? 'sidebar-open' : 'sidebar-close'
 
   let listurl = process.env.NEXT_PUBLIC_listskills
 
@@ -20,7 +21,7 @@ const Layout = ({ children }) => {
     <div>
       <Header />
       <div className='h-screen flex flex-row justify-start'>
-        <aside id='mySidebar'>
+        <aside id='mySidebar' className={` ${show_sidebar} `}>
           <Sidebar />
         </aside>
         <article id='myArticle' className='bg-primary flex-1 p-4 text-white'>

@@ -1,35 +1,34 @@
 import { fetcher } from '@/lib/utils'
 import TreeView from 'components/TreeView/TreeView'
 import { useRouter } from 'next/navigation'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import useSWR from 'swr'
 
 function createHierarchy(data) {
-  const root = { name: 'root', children: [] }
+  const hierarchy = []
   let delimiter = '/'
-  data.forEach(item => addItemToHierarchy(root, item.split(delimiter)))
-  return [root]
+  data.forEach(item => addItemToHierarchy(hierarchy, item.split(delimiter)))
+  return hierarchy
 }
 
-function addItemToHierarchy(node, parts, parentPath) {
+function addItemToHierarchy(nodes, parts, rootid, parentPath) {
   const name = parts.shift()
 
   if (!name) return
 
-  node.children = node.children || []
+  const fullPath = parentPath ? `${parentPath}/${name}` : name
+  const root = rootid ?? name
 
-  const parent = parentPath ? `${parentPath}/${name}` : name
+  let node = nodes.find(node => node.name === name)
 
-  let childNode = node.children.find(node => node.name === name)
-
-  if (!childNode) {
-    childNode = { name, parent }
-    node.children.push(childNode)
+  if (!node) {
+    node = { name, root, fullPath, children: [] }
+    nodes.push(node)
   }
 
   if (parts.length > 0) {
-    addItemToHierarchy(childNode, parts, parent)
+    addItemToHierarchy(node.children, parts, root, fullPath)
   }
 }
 
@@ -42,6 +41,7 @@ export const Sidebar = () => {
   if (menus) {
     const statichtmls = menus.statichtmls
     const formattedData = createHierarchy(statichtmls)
+    // console.log(JSON.stringify(formattedData, null, 4))
 
     return (
       <>
@@ -51,25 +51,6 @@ export const Sidebar = () => {
   }
 }
 
-// const links = statichtmls.map((v, i) => {
-//   let splitted = v.split(delimiter)
-//   let repeats = splitted.length - 1
-//   let spaces = '.'.repeat(repeats)
-//   let showmenu = spaces + splitted[repeats]
-//   let href = v
-//   return (
-//     <span
-//       key={`link${i}`}
-//       className={`flex py-1 px-1 items-center w-full h-full`}
-//       onClick={() => {
-//         dispatch(setContent(href))
-//       }}
-//     >
-//       {showmenu}
-//     </span>
-//   )
-// })
-
 {
   /* <div className='flex flex-col'>
           <div className='flex items-center justify-between relative'>
@@ -78,9 +59,3 @@ export const Sidebar = () => {
           </div>
         </div> */
 }
-
-// const originalData = {
-//   'statichtmls': ['designpattern/AdapterPattern/part1', 'designpattern/AdapterPattern/part2'],
-// }
-
-// console.log(JSON.stringify(formattedData, null, 4))

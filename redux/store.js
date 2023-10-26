@@ -17,11 +17,15 @@ export const store = configureStore(
     reducer: {
       posts: postsReducer,
       statuso: statusReducer,
-      content: utilReducer,
+      util: utilReducer,
       [apiPosts.reducerPath]: apiPosts.reducer, // from createApi, fetchBaseQuery, useGetPostsQuery
     },
     middleware: getDefaultMiddleware => {
-      let tmpMiddleware = getDefaultMiddleware().concat(thunk).concat(apiPosts.middleware)
+      let tmpMiddleware = getDefaultMiddleware({
+        serializableCheck: false,
+      })
+        .concat(thunk)
+        .concat(apiPosts.middleware)
       if (environment === 'development') {
         tmpMiddleware = tmpMiddleware.concat(logger)
       }

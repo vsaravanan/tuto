@@ -34,3 +34,43 @@ iframe {
   overflow: hidden;
   background-color: rgb(11, 11, 11);
 }
+
+
+.sidebar-open  {
+
+  display: block;
+
+}
+
+.sidebar-close {
+
+  display: none;
+}
+
+span.sidebar {
+  padding: 1px 1px 1px 4px;
+
+  text-decoration: none;
+  display: block;
+  transition: 0.3s;
+}
+
+span.sidebar:hover {
+  color: #765d5d;
+}
+
+.openbtn {
+  font-size: 30px;
+  cursor: pointer;
+  background-color: bg-slate-600;
+  color: black;
+  padding: 1px 10px;
+  border: none;
+  margin-left: 1vw;
+}
+
+.openbtn:hover {
+  background-color: rgb(33, 54, 66);
+  color: white;
+
+}

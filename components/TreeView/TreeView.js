@@ -1,18 +1,20 @@
-import { setContent } from '@/redux/utilSlice'
+import { selectMenu, setContent } from '@/redux/utilSlice'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 const listurl = process.env.NEXT_PUBLIC_listskills
 
 const TreeNode = ({ id, node }) => {
   const dispatch = useDispatch()
-
   node.key = id
-
   const [isExpanded, setIsExpanded] = useState(false)
+  const { menuSelected } = useSelector(state => state.util)
 
-  const handleToggle = () => {
-    setIsExpanded(!isExpanded)
+  const expandCollapse = () => {
+    if (node.children?.length > 0) {
+      setIsExpanded(isExpanded => !isExpanded)
+    }
+    dispatch(selectMenu({ nodeitem: node.root, leaf: node.children?.length === 0 }))
   }
 
   const getLink = () => {
@@ -21,28 +23,45 @@ const TreeNode = ({ id, node }) => {
       icon = isExpanded ? '📖' : '📂'
     }
 
-    let url
+    let leaf
     if (icon) {
-      url = icon + node.name
+      leaf = icon + node.name
     } else {
-      url = (
+      leaf = (
         <span
+          className={'sidebar'}
           onClick={() => {
-            dispatch(setContent(node.parent))
+            dispatch(setContent(node.fullPath))
           }}
         >
           {node.name}
         </span>
       )
     }
-    return url
+    return leaf
   }
+
+  let leaflink = getLink()
+
+  let expandok = ''
+  if (node.root === menuSelected) {
+    expandok = isExpanded ? 'expanded' : ''
+  } else {
+    if (isExpanded) {
+      setIsExpanded(isExpanded => false)
+    }
+  }
+
+  // console.log(
+  //   node.root + '.' + node.name + ', ' + menuSelected + ', ' + node.children.length,
+  //   ', ' + isExpanded + ', ' + expandok,
+  // )
 
   return (
     <>
       <div className='tree-node'>
-        <div onClick={handleToggle} className={`node-toggle ${isExpanded ? 'expanded' : ''}`}>
-          {getLink()}
+        <div onClick={() => expandCollapse()} className={`node-toggle ${expandok}`}>
+          {leaflink}
         </div>
         {isExpanded && (
           <ul className='child-nodes'>
@@ -61,11 +80,11 @@ const TreeNode = ({ id, node }) => {
   )
 }
 
-const TreeView = data => {
+const TreeView = ({ input }) => {
   return (
     <div>
-      {data.input.map(rootNode => (
-        <TreeNode key={'1'} node={rootNode} />
+      {input.map((rootNode, index) => (
+        <TreeNode key={index} node={rootNode} />
       ))}
     </div>
   )
