@@ -17,11 +17,17 @@ const TreeNode = ({ id, node }) => {
     dispatch(selectMenu({ nodeitem: node.root, leaf: node.children?.length === 0 }))
   }
 
-  const getLink = () => {
+  const getIconOrBlank = () => {
     let icon
     if (node.children?.length > 0) {
       icon = isExpanded ? '📖' : '📂'
     }
+    return icon
+  }
+  const getLink = () => {
+    // getParent or getLeaf
+
+    let icon = getIconOrBlank()
 
     let leaf
     if (icon) {
@@ -60,9 +66,11 @@ const TreeNode = ({ id, node }) => {
   return (
     <>
       <div className='tree-node'>
+        {/* leaf */}
         <div onClick={() => expandCollapse()} className={`node-toggle ${expandok}`}>
           {leaflink}
         </div>
+        {/* else children expanded  */}
         {isExpanded && (
           <ul className='child-nodes'>
             {node.children?.map((childNode, index) => {
