@@ -1,4 +1,3 @@
-import { sleep } from '@/lib/utils'
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = { content: '', showSidebar: true, menuSelected: '' }

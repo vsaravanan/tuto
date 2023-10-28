@@ -1,8 +1,6 @@
 // redux/postSlice.js
-import { createSlice } from '@reduxjs/toolkit'
 import { fetchPosts } from '@/lib/fetchPosts'
-import { setProgress, setFinished } from './statusoSlice'
-import { useDispatch } from 'react-redux'
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   posts: [],
