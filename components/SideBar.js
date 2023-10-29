@@ -1,7 +1,5 @@
 import { fetcher } from '@/lib/utils'
 import TreeView from 'components/TreeView/TreeView'
-import { useRouter } from 'next/navigation'
-import { useDispatch, useSelector } from 'react-redux'
 
 import useSWR from 'swr'
 
@@ -35,8 +33,6 @@ function addItemToHierarchy(nodes, parts, rootid, parentPath) {
 export const Sidebar = () => {
   const url = process.env.NEXT_PUBLIC_statichtmls
   const { data: menus, isLoading, isError, error } = useSWR(url, fetcher)
-  const router = useRouter()
-  const dispatch = useDispatch()
 
   if (menus) {
     const statichtmls = menus.statichtmls
