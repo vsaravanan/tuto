@@ -4,13 +4,21 @@ import LoadingSpinner from 'components/LoadingSpinner'
 import ErrorComponent from 'components/ErrorComponent'
 import Header from 'components/header'
 import Footer from 'components/footer'
-import { cError, cFinished, cIdle, cLayout, cProgress } from '@/redux/statusoSlice'
+import useStatusoStore, { cError, cFinished, cIdle, cLayout, cProgress } from '@/redux/statusoSlice'
 import { Sidebar } from 'components/SideBar'
+import useUtilStore from '@/redux/utilSlice'
 
 const Layout = ({ children }) => {
   const { isLoading, error } = useSelector(state => state.posts)
-  const { statuso } = useSelector(state => state.statuso)
-  const { content, showSidebar } = useSelector(state => state.util)
+  const statuso = useStatusoStore(state => state.statuso)
+
+  const { content, showSidebar } = useUtilStore(state => {
+    return {
+      content: state.content,
+      showSidebar: state.showSidebar,
+    }
+  })
+
   const show_sidebar = showSidebar ? 'sidebar-open' : 'sidebar-close'
 
   let listurl = process.env.NEXT_PUBLIC_listskills
@@ -38,15 +46,13 @@ const Layout = ({ children }) => {
               <>
                 <main>
                   {content}
-
+                  {children}
                   <iframe
                     id='iframeid'
                     title='tutorials'
                     src={url}
                     sandbox='allow-same-origin allow-forms allow-scripts allow-popups allow-top-navigation allow-top-navigation-by-user-activation'
                   ></iframe>
-
-                  {children}
                 </main>
               </>
             )}

@@ -1,20 +1,26 @@
-import { selectMenu, setContent } from '@/redux/utilSlice'
+import useUtilStore from '@/redux/utilSlice'
 import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+// ?import { useDispatch, useSelector } from 'react-redux'
+// import useUtilStore from '@/redux/utilSlice'
 
 const listurl = process.env.NEXT_PUBLIC_listskills
 
 const TreeNode = ({ id, node }) => {
-  const dispatch = useDispatch()
   node.key = id
   const [isExpanded, setIsExpanded] = useState(false)
-  const { menuSelected } = useSelector(state => state.util)
+  const { menuSelected, selectMenu, setContent } = useUtilStore(state => {
+    return {
+      menuSelected: state.menuSelected,
+      selectMenu: state.selectMenu,
+      setContent: state.setContent,
+    }
+  })
 
   const expandCollapse = () => {
     if (node.children?.length > 0) {
       setIsExpanded(isExpanded => !isExpanded)
     }
-    dispatch(selectMenu({ nodeitem: node.root, leaf: node.children?.length === 0 }))
+    selectMenu({ nodeitem: node.root, leaf: node.children?.length === 0 })
   }
 
   const getIconOrBlank = () => {
@@ -37,7 +43,7 @@ const TreeNode = ({ id, node }) => {
         <span
           className={'sidebar'}
           onClick={() => {
-            dispatch(setContent(node.fullPath))
+            setContent(node.fullPath)
           }}
         >
           {node.name}
