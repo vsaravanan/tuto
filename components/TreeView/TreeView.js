@@ -1,7 +1,5 @@
 import useUtilStore from '@/redux/utilSlice'
 import { useState } from 'react'
-// ?import { useDispatch, useSelector } from 'react-redux'
-// import useUtilStore from '@/redux/utilSlice'
 
 const listurl = process.env.NEXT_PUBLIC_listskills
 

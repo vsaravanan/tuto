@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
 
   let listurl = process.env.NEXT_PUBLIC_listskills
 
-  let url = content ? `${listurl}${content}.htm` : `${listurl}redux/redux.htm`
+  let url = content !== '' ? `${listurl}${content}.htm` : ''
 
   return (
     <div>
@@ -45,14 +45,19 @@ const Layout = ({ children }) => {
             ) : (
               <>
                 <main>
-                  {content}
-                  {children}
-                  <iframe
-                    id='iframeid'
-                    title='tutorials'
-                    src={url}
-                    sandbox='allow-same-origin allow-forms allow-scripts allow-popups allow-top-navigation allow-top-navigation-by-user-activation'
-                  ></iframe>
+                  {children && content === '' ? (
+                    children
+                  ) : (
+                    <>
+                      {content}
+                      <iframe
+                        id='iframeid'
+                        title='tutorials'
+                        src={url}
+                        sandbox='allow-same-origin allow-forms allow-scripts allow-popups allow-top-navigation allow-top-navigation-by-user-activation'
+                      ></iframe>
+                    </>
+                  )}
                 </main>
               </>
             )}

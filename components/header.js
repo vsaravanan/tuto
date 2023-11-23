@@ -31,10 +31,12 @@ const Header = () => {
           </button>
 
           <div>
-            Saravanan personal blog. Developer in java, springboot, reactjs, nextjs, linux, crypto
+            Presentation. Primary skills in java, springboot, reactjs, nextjs, linux, crypto
             <br></br>
-            This website is built on google cloud, linux, nginx, pm2, reactjs, nextjs, reduxtoolkit,
-            zustand and with the help of ChatGPT 😊
+            This website is built on linux, nginx, pm2, reactjs, nextjs, reduxtoolkit, zustand,
+            java, spring boot, reactive, docker, multiple google cloud VMs
+            <br></br> and with the help of ChatGPT 😊 ( Contact : Mobile: +65-85118487,
+            saravanan.resume@gmail.com )
           </div>
 
           <div className='flex flex-row justify-center sm:justify-evenly align-middle gap-4 text-white text-4xl lg:text-5xl'>

@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-around;
+    justify-content: space-evenly;
+    height: 80vh;
+    width: 80vw;
+    background-color: rgb(22, 60, 62);
+}
