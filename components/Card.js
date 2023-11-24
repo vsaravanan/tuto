@@ -5,6 +5,7 @@ import Link from 'next/link'
 export const Card = ({ card }) => {
   const { title, imgSrc, imgAlt, description, github, swagger, testpage } = card
   const [isHovered, setIsHovered] = useState(false)
+  const desc = description.split('\n')
 
   return (
     <div
@@ -14,7 +15,15 @@ export const Card = ({ card }) => {
     >
       {imgSrc && imgAlt && <img className='card-img' src={imgSrc} alt={imgAlt} />}
       {title && <h1 className='card-title'>{title}</h1>}
-      {description && <p className='card-description'>{description}</p>}
+      {description && (
+        <p className='card-description'>
+          <table>
+            {desc.map(e => (
+              <tr>{e}</tr>
+            ))}
+          </table>
+        </p>
+      )}
 
       <Link className='link' href={github} rel='noopener noreferrer' target='_blank'>
         github

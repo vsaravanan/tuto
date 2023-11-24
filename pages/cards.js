@@ -5,16 +5,37 @@ import 'styles/cards.css'
 
 const Cards = () => {
   const data = []
-  let card = {
+  let card = {}
+  card = {
     title: 'Spring Reactive and Flyway',
     description:
-      'This is very simply java spring boot app, available to test online. ' +
+      'This is very simple java spring boot app, \n' +
+      ' available to test online. \n' +
       ' You can test from swagger page if you wish',
     imgSrc: 'https://picsum.photos/300/200',
     imgAlt: 'Card Image',
     github: 'https://github.com/vsaravanan/spring-reactive-flyway',
     swagger: 'https://saravanjs.com:10101/swagger-ui/index.html',
-    testpage: 'http://saravanjs.com:10100/api/v1/students',
+    testpage: 'https://saravanjs.com:10101/api/v1/students',
+  }
+  data.push(card)
+  card = {
+    title: 'Spring Reactive with multi tables',
+    description:
+      'Check the table complex joins in reactive. \n' +
+      " You can't use @OneToMany, @Entity, etc \n" +
+      '* Reactive Endpoints \n' +
+      '* Mono, Flux structures \n' +
+      '* WebClient & WebTestClient \n' +
+      '* R2DBC with PostgreSQL \n' +
+      '1.  Java - 21 \n' +
+      '2.  Maven- 3.9.4 \n' +
+      '3.  Docker- 20.x.x ',
+    imgSrc: 'https://picsum.photos/300/200',
+    imgAlt: 'Card Image',
+    github: 'https://github.com/vsaravanan/spring-webflux-reactive-rest-api-demo',
+    swagger: 'https://saravanjs.com:10201/swagger-ui/index.html',
+    testpage: 'https://saravanjs.com:10201/api/v1/users',
   }
   data.push(card)
 
