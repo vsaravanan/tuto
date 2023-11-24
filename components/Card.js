@@ -16,13 +16,11 @@ export const Card = ({ card }) => {
       {imgSrc && imgAlt && <img className='card-img' src={imgSrc} alt={imgAlt} />}
       {title && <h1 className='card-title'>{title}</h1>}
       {description && (
-        <p className='card-description'>
-          <table>
-            {desc.map(e => (
-              <tr>{e}</tr>
-            ))}
-          </table>
-        </p>
+        <div className='card-description'>
+          {desc.map((e, i) => (
+            <div key={i}>{e}</div>
+          ))}
+        </div>
       )}
 
       <Link className='link' href={github} rel='noopener noreferrer' target='_blank'>

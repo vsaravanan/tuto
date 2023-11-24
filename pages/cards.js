@@ -13,7 +13,7 @@ const Cards = () => {
       ' available to test online. \n' +
       ' You can test from swagger page if you wish',
     imgSrc: 'https://picsum.photos/300/200',
-    imgAlt: 'Card Image',
+    imgAlt: 'Card Image 1',
     github: 'https://github.com/vsaravanan/spring-reactive-flyway',
     swagger: 'https://saravanjs.com:10101/swagger-ui/index.html',
     testpage: 'https://saravanjs.com:10101/api/v1/students',
@@ -32,7 +32,7 @@ const Cards = () => {
       '2.  Maven- 3.9.4 \n' +
       '3.  Docker- 20.x.x ',
     imgSrc: 'https://picsum.photos/300/200',
-    imgAlt: 'Card Image',
+    imgAlt: 'Card Image 2',
     github: 'https://github.com/vsaravanan/spring-webflux-reactive-rest-api-demo',
     swagger: 'https://saravanjs.com:10201/swagger-ui/index.html',
     testpage: 'https://saravanjs.com:10201/api/v1/users',
