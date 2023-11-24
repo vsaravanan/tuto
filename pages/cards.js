@@ -16,18 +16,18 @@ const Cards = () => {
     imgAlt: 'Card Image 1',
     github: 'https://github.com/vsaravanan/spring-reactive-flyway',
     swagger: 'https://saravanjs.com:10101/swagger-ui/index.html',
-    testpage: 'https://saravanjs.com:10101/api/v1/students',
+    testpages: [{ allstudents: 'https://saravanjs.com:10101/api/v1/students' }],
   }
   data.push(card)
   card = {
     title: 'Spring Reactive with multi tables',
     description:
-      'Check the table complex joins in reactive. \n' +
-      " You can't use @OneToMany, @Entity, etc \n" +
       '* Reactive Endpoints \n' +
       '* Mono, Flux structures \n' +
       '* WebClient & WebTestClient \n' +
       '* R2DBC with PostgreSQL \n' +
+      'Check the table complex joins in reactive. \n' +
+      " You can't use @OneToMany, @Entity, etc in reactive \n" +
       '1.  Java - 21 \n' +
       '2.  Maven- 3.9.4 \n' +
       '3.  Docker- 20.x.x ',
@@ -35,7 +35,11 @@ const Cards = () => {
     imgAlt: 'Card Image 2',
     github: 'https://github.com/vsaravanan/spring-webflux-reactive-rest-api-demo',
     swagger: 'https://saravanjs.com:10201/swagger-ui/index.html',
-    testpage: 'https://saravanjs.com:10201/api/v1/users',
+    testpages: [
+      { allusers: 'https://saravanjs.com:10201/api/v1/users' },
+      { get: 'https://saravanjs.com:10201/api/v1/users/1' },
+      { flux: 'https://saravanjs.com:10201/api/v1/users/flux' },
+    ],
   }
   data.push(card)
 

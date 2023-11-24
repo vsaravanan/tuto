@@ -33,8 +33,8 @@ const Header = () => {
           <div>
             Presentation. Primary skills in java, springboot, reactjs, nextjs, linux, crypto
             <br></br>
-            This website is built on linux, nginx, pm2, reactjs, nextjs, reduxtoolkit, zustand,
-            java, spring boot, reactive, docker, multiple google cloud VMs
+            This website is built on linux, nginx, pm2, reactjs, nextjs, redux, zustand, jdk21,
+            spring boot, reactive, docker, multiple google cloud VMs
             <br></br> and with the help of ChatGPT 😊 ( Contact : Mobile: +65-85118487,
             saravanan.resume@gmail.com )
           </div>

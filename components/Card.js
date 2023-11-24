@@ -3,7 +3,7 @@ import './Card.css'
 import Link from 'next/link'
 
 export const Card = ({ card }) => {
-  const { title, imgSrc, imgAlt, description, github, swagger, testpage } = card
+  const { title, imgSrc, imgAlt, description, github, swagger, testpages } = card
   const [isHovered, setIsHovered] = useState(false)
   const desc = description.split('\n')
 
@@ -29,9 +29,14 @@ export const Card = ({ card }) => {
       <Link className='link' href={swagger} rel='noopener noreferrer' target='_blank'>
         swagger
       </Link>
-      <Link className='link' href={testpage} rel='noopener noreferrer' target='_blank'>
-        testpage
-      </Link>
+      {testpages.map((page, i) => {
+        const [url, urlpath] = Object.entries(page)[0]
+        return (
+          <Link className='link' key={i} href={urlpath} rel='noopener noreferrer' target='_blank'>
+            {url}
+          </Link>
+        )
+      })}
     </div>
   )
 }
