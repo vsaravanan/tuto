@@ -16,7 +16,10 @@ const Cards = () => {
     imgAlt: 'Card Image 1',
     github: 'https://github.com/vsaravanan/spring-reactive-flyway',
     swagger: 'https://saravanjs.com:10101/swagger-ui/index.html',
-    testpages: [{ allstudents: 'https://saravanjs.com:10101/api/v1/students' }],
+    testpages: [
+      { ssl: 'https://saravanjs.com:10101/api/v1/students' },
+      { http: 'http://saravanjs.com:10100/api/v1/students' },
+    ],
   }
   data.push(card)
   card = {
