@@ -72,7 +72,8 @@ const Cards = () => {
       '* to create user, reset pwd, chgpwd \n' +
       '* login to get jwt token \n' +
       '* refresh token before timeouts \n' +
-      '* option to extend time \n',
+      '* option to extend time \n' +
+      '* access to the pages for the user roles assigned \n',
     imgSrc: 'https://picsum.photos/300/200',
     imgAlt: 'Card Image 3',
     // github: '',
