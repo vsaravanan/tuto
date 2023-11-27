@@ -23,12 +23,16 @@ export const Card = ({ card }) => {
         </div>
       )}
 
-      <Link className='link' href={github} rel='noopener noreferrer' target='_blank'>
-        github
-      </Link>
-      <Link className='link' href={swagger} rel='noopener noreferrer' target='_blank'>
-        swagger
-      </Link>
+      {github && (
+        <Link className='link' href={github} rel='noopener noreferrer' target='_blank'>
+          github
+        </Link>
+      )}
+      {swagger && (
+        <Link className='link' href={swagger} rel='noopener noreferrer' target='_blank'>
+          swagger
+        </Link>
+      )}
       {testpages.map((page, i) => {
         const [url, urlpath] = Object.entries(page)[0]
         return (
