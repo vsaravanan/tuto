@@ -63,7 +63,7 @@ const Cards = () => {
   data.push(card)
   card = {
     title: 'Login and Spring Security',
-    description: 'Login and Spring Security \n',
+    description: 'discuss to get the source code and demo \n',
     imgSrc: 'https://picsum.photos/300/200',
     imgAlt: 'Card Image 3',
     // github: '',
