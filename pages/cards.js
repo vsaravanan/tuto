@@ -63,7 +63,16 @@ const Cards = () => {
   data.push(card)
   card = {
     title: 'Login and Spring Security',
-    description: 'discuss to get the source code and demo \n',
+    description:
+      'Discuss with me to get the source code and demo \n' +
+      '* Java 21, Spring Security, ReactJs, Redux \n' +
+      '* MS-Sql in Linux \n' +
+      '* Hosted in Google Cloud \n' +
+      '* nginx with proxy pass to backend \n' +
+      '* to create user, reset pwd, chgpwd \n' +
+      '* login to get jwt token \n' +
+      '* refresh token before timeouts \n' +
+      '* option to extend time \n',
     imgSrc: 'https://picsum.photos/300/200',
     imgAlt: 'Card Image 3',
     // github: '',
