@@ -58,6 +58,9 @@ const Cards = () => {
         UserController:
           'https://github.com/vsaravanan/spring-webflux-reactive-rest-api-demo/blob/master/src/main/java/dev/saravan/reactiveapi/controller/UserController.java',
       },
+      {
+        postman: 'https://documenter.getpostman.com/view/691160/2s9YeEbBpc',
+      },
     ],
   }
   data.push(card)
