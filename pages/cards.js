@@ -19,13 +19,15 @@ const Cards = () => {
     testpages: [
       { ssl: 'https://saravanjs.com:10101/api/v1/students' },
       { http: 'http://saravanjs.com:10100/api/v1/students' },
+    ],
+    sourcecodes: [
       {
         StudentController:
-          'https://github.com/vsaravanan/spring-reactive-flyway/blob/master/src/main/java/com/saravan/reactive/student/StudentController.java',
+          'https://raw.githubusercontent.com/vsaravanan/spring-reactive-flyway/master/src/main/java/com/saravan/reactive/student/StudentController.java',
       },
       {
         StudentService:
-          'https://github.com/vsaravanan/spring-reactive-flyway/blob/master/src/main/java/com/saravan/reactive/student/StudentService.java',
+          'https://raw.githubusercontent.com/vsaravanan/spring-reactive-flyway/master/src/main/java/com/saravan/reactive/student/StudentService.java',
       },
     ],
   }
@@ -50,16 +52,19 @@ const Cards = () => {
       { allusers: 'https://saravanjs.com:10201/api/v1/users' },
       { get: 'https://saravanjs.com:10201/api/v1/users/1' },
       { flux: 'https://saravanjs.com:10201/api/v1/users/flux' },
+
+      {
+        postman: 'https://documenter.getpostman.com/view/691160/2s9YeEbBpc',
+      },
+    ],
+    sourcecodes: [
       {
         UserService:
-          'https://github.com/vsaravanan/spring-webflux-reactive-rest-api-demo/blob/master/src/main/java/dev/saravan/reactiveapi/service/UserService.java',
+          'https://raw.githubusercontent.com/vsaravanan/spring-webflux-reactive-rest-api-demo/master/src/main/java/dev/saravan/reactiveapi/service/UserService.java',
       },
       {
         UserController:
-          'https://github.com/vsaravanan/spring-webflux-reactive-rest-api-demo/blob/master/src/main/java/dev/saravan/reactiveapi/controller/UserController.java',
-      },
-      {
-        postman: 'https://documenter.getpostman.com/view/691160/2s9YeEbBpc',
+          'https://raw.githubusercontent.com/vsaravanan/spring-webflux-reactive-rest-api-demo/master/src/main/java/dev/saravan/reactiveapi/controller/UserController.java',
       },
     ],
   }

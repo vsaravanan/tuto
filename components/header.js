@@ -31,17 +31,24 @@ const Header = () => {
           </button>
 
           <div>
-            Presentation. Primary skills in java, springboot, reactjs, nextjs, linux, crypto
+            Presentation. Primary skills in java, springboot, reactjs, nextjs, linux, crypto. This
+            website is built on
             <br></br>
-            This website is built on linux, nginx, pm2, reactjs, nextjs, redux, zustand, jdk21,
-            spring boot, reactive, docker, multiple google cloud VMs
+            linux, nginx, pm2, reactjs, nextjs, redux, zustand, jdk21, spring boot, reactive,
+            docker, multiple google cloud VMs
             <br></br> and with the help of ChatGPT 😊 ( Contact : Mobile: +65-85118487,
             saravanan.resume@gmail.com )
           </div>
 
           <div className='flex flex-row justify-center sm:justify-evenly align-middle gap-4 text-white text-4xl lg:text-5xl'>
-            <Link className='text-white/90 hover:text-white' href='/'>
-              <FaVk />
+            <Link className='text-white/90 hover:text-white' href='/' as='/'>
+              <span
+                onClick={() => {
+                  window.location.href = '/'
+                }}
+              >
+                <FaVk />
+              </span>
             </Link>
             <Link className='text-white/90 hover:text-white' href='https://youtu.be/xgsQvI-Eyg4'>
               <FaYoutube />

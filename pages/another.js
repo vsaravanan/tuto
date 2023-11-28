@@ -1,3 +1,11 @@
-export default function Another() {
-  return <div>Another</div>
+import CodePublisher from '@/components/codeRead/codePublisher'
+
+const Another = () => {
+  return (
+    <div>
+      <CodePublisher />
+    </div>
+  )
 }
+
+export default Another

@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
 import './Card.css'
 import Link from 'next/link'
+import ReadCode from './codeRead/readCode'
 
 export const Card = ({ card }) => {
-  const { title, imgSrc, imgAlt, description, github, swagger, testpages } = card
+  const { title, imgSrc, imgAlt, description, github, swagger, testpages, sourcecodes } = card
   const [isHovered, setIsHovered] = useState(false)
   const desc = description.split('\n')
+  // let serverPath = ''
+
+  // if (typeof window !== 'undefined') {
+  //   serverPath = window.origin
+  // }
 
   return (
     <div
@@ -33,14 +39,26 @@ export const Card = ({ card }) => {
           swagger
         </Link>
       )}
-      {testpages.map((page, i) => {
-        const [url, urlpath] = Object.entries(page)[0]
-        return (
-          <Link className='link' key={i} href={urlpath} rel='noopener noreferrer' target='_blank'>
-            {url}
-          </Link>
-        )
-      })}
+
+      {testpages &&
+        testpages.map((page, i) => {
+          const [url, urlpath] = Object.entries(page)[0]
+          return (
+            <Link className='link' key={i} href={urlpath} rel='noopener noreferrer' target='_blank'>
+              {url}
+            </Link>
+          )
+        })}
+      {/* sourcecodes */}
+      {sourcecodes &&
+        sourcecodes.map((page, i) => {
+          const [url, urlpath] = Object.entries(page)[0]
+          return (
+            <Link key={i} className='link' href={'/sourcecode/' + encodeURIComponent(urlpath)}>
+              {url}
+            </Link>
+          )
+        })}
     </div>
   )
 }
