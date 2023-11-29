@@ -20,12 +20,19 @@ const Header = () => {
   ) : (
     ''
   )
-  let headings
+  let heading
 
   if (!content) {
     const router = useRouter()
     const { leafpage } = router.query
-    headings = leafpage && leafpage.match(/.{1,100}/g)
+    heading = leafpage
+    // headings = leafpage && leafpage.match(/.{1,100}/g)
+
+    // headings.map((e, i) => (
+    //   <span>
+    //     {e}
+    //     <br />
+    //   </span>
   }
 
   return (
@@ -42,13 +49,11 @@ const Header = () => {
           </button>
           <div>
             {content ||
-              (headings &&
-                headings.map((e, i) => (
-                  <span>
-                    {e}
-                    <br />
-                  </span>
-                )))}
+              (heading && (
+                <Link className='link' href={heading} rel='noopener noreferrer' target='_blank'>
+                  raw copy
+                </Link>
+              ))}
           </div>
           <div className='flex flex-row justify-center sm:justify-evenly align-middle gap-4 text-white text-4xl lg:text-5xl'>
             <Link className='text-white/90 hover:text-white' href='/' as='/'>
