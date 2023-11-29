@@ -1,0 +1,9 @@
+
+.nobullet {
+    list-style: none;
+}
+
+body {
+    background-color: rgb(17, 17, 46);
+    color: darkturquoise;
+}
