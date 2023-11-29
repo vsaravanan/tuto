@@ -7,11 +7,32 @@ const Cards = () => {
   const data = []
   let card = {}
   card = {
+    title: 'About me',
+    description: ` My primary skills are in java, springboot, 
+      reactjs, nextjs, linux, crypto. 
+      This website is built on linux, nginx, pm2, reactjs, 
+      nextjs, redux, zustand, jdk21, spring boot, 
+      reactive, docker, multiple google cloud VMs 
+
+      Contact : Mobile: +65-85118487
+      Email saravanan.resume@gmail.com`,
+    imgSrc: 'https://picsum.photos/300/200',
+    imgAlt: 'Card Image 0',
+    testpages: [
+      { skills: '/skills.html' },
+      { experience: '/experience.html' },
+      { finance: '/finance.html' },
+      { database: '/database.html' },
+      { realtime: '/realtime.html' },
+    ],
+  }
+  data.push(card)
+
+  card = {
     title: 'Spring Reactive and Flyway',
-    description:
-      'This is very simple java spring boot app, \n' +
-      ' available to test online. \n' +
-      ' You can test from swagger page if you wish',
+    description: `This is very simple java spring boot app, 
+      available to test online. 
+      You can test from swagger page if you wish`,
     imgSrc: 'https://picsum.photos/300/200',
     imgAlt: 'Card Image 1',
     github: 'https://github.com/vsaravanan/spring-reactive-flyway',
@@ -34,16 +55,16 @@ const Cards = () => {
   data.push(card)
   card = {
     title: 'Spring Reactive with multi tables',
-    description:
-      '* Reactive Endpoints \n' +
-      '* Mono, Flux structures \n' +
-      '* WebClient & WebTestClient \n' +
-      '* R2DBC with PostgreSQL \n' +
-      'Check the table complex joins in reactive. \n' +
-      " You can't use @OneToMany, @Entity, etc in reactive \n" +
-      '1.  Java - 21 \n' +
-      '2.  Maven- 3.9.4 \n' +
-      '3.  Docker- 20.x.x ',
+    description: `* Reactive Endpoints 
+      * Mono, Flux structures 
+      * WebClient & WebTestClient 
+      * R2DBC with PostgreSQL 
+      Check the complex table joins in reactive. 
+      You can't use @OneToMany, @Entity, etc 
+      1.  Java - 21 
+      2.  Maven- 3.9.4 
+      3.  Docker- 20.x.x 
+      `,
     imgSrc: 'https://picsum.photos/300/200',
     imgAlt: 'Card Image 2',
     github: 'https://github.com/vsaravanan/spring-webflux-reactive-rest-api-demo',
@@ -69,22 +90,21 @@ const Cards = () => {
     ],
   }
   data.push(card)
+
   card = {
     title: 'Login and Spring Security',
-    description:
-      'Discuss with me to get the source code and demo \n' +
-      '* Java 21, Spring Security, ReactJs, Redux \n' +
-      '* MS-Sql in Linux \n' +
-      '* Hosted in Google Cloud \n' +
-      '* nginx with proxy pass to backend \n' +
-      '* to create user, reset pwd, chgpwd \n' +
-      '* login to get jwt token \n' +
-      '* refresh token before timeouts \n' +
-      '* option to extend time \n' +
-      '* access to the pages for the user roles assigned \n',
+    description: `Discuss with me for the source code and demo
+      * Java 21, Spring Security, ReactJs, Redux
+      * MS-Sql in Linux
+      * Hosted in Google Cloud
+      * nginx with proxy pass to backend
+      * to create user, reset pwd, chgpwd
+      * login to get jwt token
+      * refresh token before timeouts
+      * option to extend time
+      * access to the pages for the user roles assigned`,
     imgSrc: 'https://picsum.photos/300/200',
     imgAlt: 'Card Image 3',
-    // github: '',
     swagger: 'http://saravanjs.com:10300/swagger-ui/index.html',
     testpages: [{ loginpage: 'https://saravanjs.com:10301/' }],
   }

@@ -24,7 +24,7 @@ export const Card = ({ card }) => {
       {description && (
         <div className='card-description'>
           {desc.map((e, i) => (
-            <div key={i}>{e}</div>
+            <div key={i}>{e ? e : <br />} </div>
           ))}
         </div>
       )}

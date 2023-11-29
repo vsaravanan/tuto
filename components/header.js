@@ -1,14 +1,18 @@
 import useUtilStore from '@/redux/utilSlice'
 import Link from 'next/link'
-import { FaGithub, FaLaptop, FaVk, FaYoutube } from 'react-icons/fa'
+import { useRouter } from 'next/router'
+import { FaHome, FaGithub, FaYoutube } from 'react-icons/fa'
+import { FcManager } from 'react-icons/fc'
 // components/Header.js
 const Header = () => {
-  const { showSidebar, toggleSidebar } = useUtilStore(state => {
+  const { content, showSidebar, toggleSidebar } = useUtilStore(state => {
     return {
+      content: state.content,
       showSidebar: state.showSidebar,
       toggleSidebar: state.toggleSidebar,
     }
   })
+
   const show_click = !showSidebar ? (
     <>
       <span style={{ fontSize: 16 }}>{' 👈 click '}</span>
@@ -16,6 +20,13 @@ const Header = () => {
   ) : (
     ''
   )
+  let headings
+
+  if (!content) {
+    const router = useRouter()
+    const { leafpage } = router.query
+    headings = leafpage && leafpage.match(/.{1,100}/g)
+  }
 
   return (
     <header className='header'>
@@ -29,17 +40,16 @@ const Header = () => {
           >
             ☰ {show_click}
           </button>
-
           <div>
-            Presentation. Primary skills in java, springboot, reactjs, nextjs, linux, crypto. This
-            website is built on
-            <br></br>
-            linux, nginx, pm2, reactjs, nextjs, redux, zustand, jdk21, spring boot, reactive,
-            docker, multiple google cloud VMs
-            <br></br> and with the help of ChatGPT 😊 ( Contact : Mobile: +65-85118487,
-            saravanan.resume@gmail.com )
+            {content ||
+              (headings &&
+                headings.map((e, i) => (
+                  <span>
+                    {e}
+                    <br />
+                  </span>
+                )))}
           </div>
-
           <div className='flex flex-row justify-center sm:justify-evenly align-middle gap-4 text-white text-4xl lg:text-5xl'>
             <Link className='text-white/90 hover:text-white' href='/' as='/'>
               <span
@@ -47,15 +57,15 @@ const Header = () => {
                   window.location.href = '/'
                 }}
               >
-                <FaVk />
+                <FaHome />
               </span>
             </Link>
-            <Link className='text-white/90 hover:text-white' href='https://youtu.be/xgsQvI-Eyg4'>
-              <FaYoutube />
-            </Link>
             <Link className='text-white/90 hover:text-white' href='https://saravanjs.com/'>
-              <FaLaptop />
+              <FcManager />
             </Link>
+            {/* <Link className='text-white/90 hover:text-white' href='https://youtu.be/xgsQvI-Eyg4'>
+              <FaYoutube />
+            </Link> */}
             <Link className='text-white/90 hover:text-white' href='https://github.com/vsaravanan'>
               <FaGithub />
             </Link>
