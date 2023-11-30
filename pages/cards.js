@@ -106,7 +106,7 @@ const Cards = () => {
     imgAlt: 'Card Image 3',
     swagger: 'http://saravanjs.com:10300/swagger-ui/index.html',
     testpages: [{ 'loginpage to test': 'https://saravanjs.com:10301/' }],
-    videos: [{ 'loginpage demo video': 'http://saravanjs.com:10400/loginpage.mp4' }],
+    videos: [{ 'loginpage demo video': 'https://saravanjs.com:10401/loginpage.mp4' }],
   }
   data.push(card)
 
