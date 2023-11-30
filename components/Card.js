@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import './Card.css'
-import ReactPlayer from 'react-player'
 import Link from 'next/link'
 
 export const Card = ({ card }) => {
