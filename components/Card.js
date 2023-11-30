@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import './Card.css'
+import ReactPlayer from 'react-player'
 import Link from 'next/link'
-import ReadCode from './codeRead/readCode'
 
 export const Card = ({ card }) => {
-  const { title, imgSrc, imgAlt, description, github, swagger, testpages, sourcecodes } = card
+  const { title, imgSrc, imgAlt, description, github, swagger, testpages, sourcecodes, videos } =
+    card
   const [isHovered, setIsHovered] = useState(false)
   const desc = description.split('\n')
   // let serverPath = ''
@@ -55,6 +56,15 @@ export const Card = ({ card }) => {
           const [url, urlpath] = Object.entries(page)[0]
           return (
             <Link key={i} className='link' href={'/sourcecode/' + encodeURIComponent(urlpath)}>
+              {url}
+            </Link>
+          )
+        })}
+      {videos &&
+        videos.map((page, i) => {
+          const [url, urlpath] = Object.entries(page)[0]
+          return (
+            <Link key={i} className='link' href={'/video/' + encodeURIComponent(urlpath)}>
               {url}
             </Link>
           )

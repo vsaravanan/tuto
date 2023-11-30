@@ -1,5 +1,4 @@
 import { Card } from '@/components/Card'
-import Link from 'next/link'
 
 import 'styles/cards.css'
 
@@ -43,11 +42,11 @@ const Cards = () => {
     ],
     sourcecodes: [
       {
-        StudentController:
+        'code: StudentController':
           'https://raw.githubusercontent.com/vsaravanan/spring-reactive-flyway/master/src/main/java/com/saravan/reactive/student/StudentController.java',
       },
       {
-        StudentService:
+        'code: StudentService':
           'https://raw.githubusercontent.com/vsaravanan/spring-reactive-flyway/master/src/main/java/com/saravan/reactive/student/StudentService.java',
       },
     ],
@@ -70,8 +69,8 @@ const Cards = () => {
     github: 'https://github.com/vsaravanan/spring-webflux-reactive-rest-api-demo',
     swagger: 'https://saravanjs.com:10201/swagger-ui/index.html',
     testpages: [
-      { allusers: 'https://saravanjs.com:10201/api/v1/users' },
-      { get: 'https://saravanjs.com:10201/api/v1/users/1' },
+      { 'get all users': 'https://saravanjs.com:10201/api/v1/users' },
+      { 'get single user': 'https://saravanjs.com:10201/api/v1/users/1' },
       { flux: 'https://saravanjs.com:10201/api/v1/users/flux' },
 
       {
@@ -80,11 +79,11 @@ const Cards = () => {
     ],
     sourcecodes: [
       {
-        UserService:
+        'code: UserService':
           'https://raw.githubusercontent.com/vsaravanan/spring-webflux-reactive-rest-api-demo/master/src/main/java/dev/saravan/reactiveapi/service/UserService.java',
       },
       {
-        UserController:
+        'code: UserController':
           'https://raw.githubusercontent.com/vsaravanan/spring-webflux-reactive-rest-api-demo/master/src/main/java/dev/saravan/reactiveapi/controller/UserController.java',
       },
     ],
@@ -106,7 +105,8 @@ const Cards = () => {
     imgSrc: 'https://picsum.photos/300/200',
     imgAlt: 'Card Image 3',
     swagger: 'http://saravanjs.com:10300/swagger-ui/index.html',
-    testpages: [{ loginpage: 'https://saravanjs.com:10301/' }],
+    testpages: [{ 'loginpage to test': 'https://saravanjs.com:10301/' }],
+    videos: [{ 'loginpage demo video': 'http://saravanjs.com:10400/loginpage.mp4' }],
   }
   data.push(card)
 
