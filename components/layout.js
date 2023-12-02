@@ -49,7 +49,7 @@ const Layout = ({ children }) => {
                     children
                   ) : (
                     <>
-                      {content}
+                      {/* {content} */}
                       <iframe
                         id='iframeid'
                         title='tutorials'
