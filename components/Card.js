@@ -6,7 +6,7 @@ export const Card = ({ card }) => {
   const { title, imgSrc, imgAlt, description, github, swagger, testpages, sourcecodes, videos } =
     card
   const [isHovered, setIsHovered] = useState(false)
-  const desc = description.split('\n')
+  const desc = description?.split('\n')
   // let serverPath = ''
 
   // if (typeof window !== 'undefined') {
