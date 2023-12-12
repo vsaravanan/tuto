@@ -147,6 +147,13 @@ data.push(card)
 //
 
 card = {
+  title: 'Codility tests',
+  testpages: [{ 'count_triangles': '/codility/count_triangles' }],
+}
+data.push(card)
+//
+
+card = {
   testpages: [{ 'Rest vs Message': 'https://saravanjs.com:8001/microservices/restVsMessage.pdf' }],
 }
 data.push(card)
