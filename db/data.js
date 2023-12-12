@@ -148,7 +148,10 @@ data.push(card)
 
 card = {
   title: 'Codility tests',
-  testpages: [{ 'count_triangles': '/codility/count_triangles' }],
+  testpages: [
+    { 'count_triangles': '/codility/count_triangles' },
+    { 'odd_occurrences': '/codility/odd_occurrences' },
+  ],
 }
 data.push(card)
 //

@@ -1,18 +1,19 @@
-import { count_triangles } from '@/components/codility/count_triangles'
-
 import ReadCode from '@/components/codeRead/readCode'
+import { odd_occurrences } from '@/components/codility/odd_occurrences'
 import 'styles/sourcecode.css'
 
-const CountTriangles = () => {
+const OddOccurrences = () => {
   const filePath =
-    'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/count_triangles.js'
+    'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/odd_occurrences.js'
 
   return (
     <div>
       <ul>
         <li>
           <h1>
-            count_triangles() ={'>'} {count_triangles().toString()}
+            odd_occurrences([9, 3, 9, 3, 9, 7, 9])
+            <br></br>
+            {odd_occurrences([9, 3, 9, 3, 9, 7, 9]).toString()}
           </h1>
           <br></br>
           <br></br>
@@ -32,4 +33,4 @@ const CountTriangles = () => {
   )
 }
 
-export default CountTriangles
+export default OddOccurrences
