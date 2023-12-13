@@ -155,6 +155,10 @@ card = {
       'question: max_nonoverlapping_segments':
         'https://app.codility.com/programmers/lessons/16-greedy_algorithms/max_nonoverlapping_segments/',
     },
+    {
+      'question: max_product_three':
+        'https://app.codility.com/programmers/lessons/6-sorting/max_product_of_three/',
+    },
   ],
 
   coderun: [
@@ -193,6 +197,13 @@ card = {
         commands: ['', 'max_non_overlapping_segments([1, 3, 7, 9, 9], [5, 6, 8, 9, 10])'],
         filePath:
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/max_non_overlapping_segments.js',
+      },
+    },
+    {
+      'solution: max_product_three': {
+        commands: ['', 'max_product_three([-8, 1, 2, -2, 5, 6])'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/max_product_three.js',
       },
     },
   ],
