@@ -1,5 +1,4 @@
 import ReadCode from '@/components/codeRead/readCode'
-import 'styles/sourcecode.css'
 import { useRouter } from 'next/router'
 import { count_triangles } from '@/components/codility/count_triangles'
 import { odd_occurrences } from '@/components/codility/odd_occurrences'
@@ -8,6 +7,7 @@ import { max_counters } from '@/components/codility/max_counters'
 import { max_non_overlapping_segments } from '@/components/codility/max_non_overlapping_segments'
 import { max_product_three } from '@/components/codility/max_product_three'
 import { maxOccurrence } from '@/components/codility/maxOccurrence'
+import 'styles/sourcecode.css'
 
 const call_count_triangles = p => {
   return count_triangles(p)
@@ -58,7 +58,8 @@ const coderun = () => {
 
                 return (
                   <div key={i}>
-                    {c} ={'>'} {d}
+                    {c} ={'>'}
+                    <span className='answer'>{d}</span>
                     <br></br>
                   </div>
                 )
