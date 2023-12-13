@@ -50,16 +50,6 @@ export const Card = ({ card }) => {
         </Link>
       )}
 
-      {testpages &&
-        testpages.map((page, i) => {
-          const [url, urlpath] = Object.entries(page)[0]
-          return (
-            <Link className='link' key={i} href={urlpath} rel='noopener noreferrer' target='_blank'>
-              {url}
-            </Link>
-          )
-        })}
-
       {coderun &&
         coderun.map((page, i) => {
           const [url, obj] = Object.entries(page)[0]
@@ -75,6 +65,16 @@ export const Card = ({ card }) => {
                 query: obj,
               }}
             >
+              {url}
+            </Link>
+          )
+        })}
+
+      {testpages &&
+        testpages.map((page, i) => {
+          const [url, urlpath] = Object.entries(page)[0]
+          return (
+            <Link className='link' key={i} href={urlpath} rel='noopener noreferrer' target='_blank'>
               {url}
             </Link>
           )
