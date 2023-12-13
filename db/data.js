@@ -206,6 +206,13 @@ card = {
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/max_product_three.js',
       },
     },
+    {
+      'solution: maxOccurrence': {
+        commands: ['', 'maxOccurrence("helloworld")'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/maxOccurrence.js',
+      },
+    },
   ],
 }
 data.push(card)

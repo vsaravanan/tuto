@@ -7,6 +7,7 @@ import { find5thBigNum } from '@/components/codility/find5thBigNum'
 import { max_counters } from '@/components/codility/max_counters'
 import { max_non_overlapping_segments } from '@/components/codility/max_non_overlapping_segments'
 import { max_product_three } from '@/components/codility/max_product_three'
+import { maxOccurrence } from '@/components/codility/maxOccurrence'
 
 const call_count_triangles = p => {
   return count_triangles(p)
@@ -30,6 +31,10 @@ const call_max_non_overlapping_segments = (p, n) => {
 
 const call_max_product_three = (p, n) => {
   return max_product_three(p, n)
+}
+
+const call_maxOccurrence = p => {
+  return maxOccurrence(p)
 }
 
 const coderun = () => {
