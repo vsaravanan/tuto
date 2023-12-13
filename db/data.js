@@ -34,8 +34,8 @@ card = {
   github: 'https://github.com/vsaravanan/spring-reactive-flyway',
   swagger: 'https://saravanjs.com:10101/swagger-ui/index.html',
   testpages: [
-    { ssl: 'https://saravanjs.com:10101/api/v1/students' },
-    { http: 'http://saravanjs.com:10100/api/v1/students' },
+    { ' ssl  demo (slow) ': 'https://saravanjs.com:10101/api/v1/students' },
+    { ' http demo (fast) ': 'http://saravanjs.com:10100/api/v1/students' },
   ],
   sourcecodes: [
     {
@@ -149,6 +149,14 @@ data.push(card)
 card = {
   title: 'Codility tests',
 
+  testpages: [
+    { 'question: max counter': 'https://youtu.be/H47iCG2YiA0?t=109' },
+    {
+      'question: max_nonoverlapping_segments':
+        'https://app.codility.com/programmers/lessons/16-greedy_algorithms/max_nonoverlapping_segments/',
+    },
+  ],
+
   coderun: [
     {
       'odd_occurrences': {
@@ -174,26 +182,18 @@ card = {
       },
     },
     {
-      'solution max_counters': {
+      'solution: max_counters': {
         commands: ['', 'max_counters([3, 4, 4, 6, 8, 1, 4, 4], 5)'],
         filePath:
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/max_counters.js',
       },
     },
     {
-      'solution max_non_overlapping_segments': {
+      'solution: max_non_overlapping_segments': {
         commands: ['', 'max_non_overlapping_segments([1, 3, 7, 9, 9], [5, 6, 8, 9, 10])'],
         filePath:
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/max_non_overlapping_segments.js',
       },
-    },
-  ],
-
-  testpages: [
-    { 'question max counter': 'https://youtu.be/H47iCG2YiA0?t=109' },
-    {
-      'question max_nonoverlapping_segments':
-        'https://app.codility.com/programmers/lessons/16-greedy_algorithms/max_nonoverlapping_segments/',
     },
   ],
 }
