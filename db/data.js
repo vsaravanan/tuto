@@ -173,6 +173,13 @@ card = {
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/find5thBigNum.js',
       },
     },
+    {
+      'max_counters': {
+        commands: ['', 'max_counters([3, 4, 4, 6, 8, 1, 4, 4], 5)'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/max_counters.js',
+      },
+    },
   ],
 }
 data.push(card)

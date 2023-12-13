@@ -1,10 +1,10 @@
-import { count_triangles } from '@/components/codility/count_triangles'
-import { odd_occurrences } from '@/components/codility/odd_occurrences'
-import { find5thBigNum } from '@/components/codility/find5thBigNum'
-
 import ReadCode from '@/components/codeRead/readCode'
 import 'styles/sourcecode.css'
 import { useRouter } from 'next/router'
+import { count_triangles } from '@/components/codility/count_triangles'
+import { odd_occurrences } from '@/components/codility/odd_occurrences'
+import { find5thBigNum } from '@/components/codility/find5thBigNum'
+import { max_counters } from '@/components/codility/max_counters'
 
 const call_count_triangles = p => {
   return count_triangles(p)
@@ -16,6 +16,10 @@ const call_odd_occurrences = p => {
 
 const call_find5thBigNum = p => {
   return find5thBigNum(p)
+}
+
+const call_max_counters = (p, n) => {
+  return max_counters(p, n)
 }
 
 const coderun = () => {
