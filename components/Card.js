@@ -3,8 +3,18 @@ import './Card.css'
 import Link from 'next/link'
 
 export const Card = ({ card }) => {
-  const { title, imgSrc, imgAlt, description, github, swagger, testpages, sourcecodes, videos } =
-    card
+  const {
+    title,
+    imgSrc,
+    imgAlt,
+    description,
+    github,
+    swagger,
+    testpages,
+    coderun,
+    sourcecodes,
+    videos,
+  } = card
   const [isHovered, setIsHovered] = useState(false)
   const desc = description?.split('\n')
   // let serverPath = ''
@@ -49,6 +59,27 @@ export const Card = ({ card }) => {
             </Link>
           )
         })}
+
+      {coderun &&
+        coderun.map((page, i) => {
+          const [url, obj] = Object.entries(page)[0]
+
+          obj.leafpage = obj.filePath
+
+          return (
+            <Link
+              className='link'
+              key={i}
+              href={{
+                pathname: '/codility/coderun',
+                query: obj,
+              }}
+            >
+              {url}
+            </Link>
+          )
+        })}
+
       {/* sourcecodes */}
       {sourcecodes &&
         sourcecodes.map((page, i) => {

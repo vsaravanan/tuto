@@ -14,5 +14,3 @@ export const count_triangles = (A = [10, 2, 5, 1, 8, 20]) => {
 
   return count
 }
-
-console.log(count_triangles())

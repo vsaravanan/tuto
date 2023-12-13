@@ -148,9 +148,31 @@ data.push(card)
 
 card = {
   title: 'Codility tests',
-  testpages: [
-    { 'count_triangles': '/codility/count_triangles' },
-    { 'odd_occurrences': '/codility/odd_occurrences' },
+
+  coderun: [
+    {
+      'odd_occurrences': {
+        commands: ['', 'odd_occurrences([9, 3, 9, 3, 9, 7, 9])'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/odd_occurrences.js',
+      },
+    },
+
+    {
+      'count_triangles': {
+        commands: ['count_triangles()', 'count_triangles([3,4,7,1,5,6])'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/count_triangles.js',
+      },
+    },
+
+    {
+      'find5thBigNum': {
+        commands: ['', 'find5thBigNum([33, 55, 13, 46, 87, 42, 10, 34, 43, 56])'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/find5thBigNum.js',
+      },
+    },
   ],
 }
 data.push(card)
