@@ -112,7 +112,7 @@ data.push(card)
 //
 
 card = {
-  title: 'Shopping cart demo in Angular',
+  title: 'Shopping cart in Angular',
   description: `
     Angular 16 in simple javascript 
       `,
@@ -174,15 +174,28 @@ card = {
       },
     },
     {
-      'max_counters': {
+      'solution max_counters': {
         commands: ['', 'max_counters([3, 4, 4, 6, 8, 1, 4, 4], 5)'],
         filePath:
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/max_counters.js',
       },
     },
+    {
+      'solution max_non_overlapping_segments': {
+        commands: ['', 'max_non_overlapping_segments([1, 3, 7, 9, 9], [5, 6, 8, 9, 10])'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/max_non_overlapping_segments.js',
+      },
+    },
   ],
 
-  testpages: [{ 'max counter youtube': 'https://youtu.be/H47iCG2YiA0?t=109' }],
+  testpages: [
+    { 'question max counter': 'https://youtu.be/H47iCG2YiA0?t=109' },
+    {
+      'question max_nonoverlapping_segments':
+        'https://app.codility.com/programmers/lessons/16-greedy_algorithms/max_nonoverlapping_segments/',
+    },
+  ],
 }
 data.push(card)
 //

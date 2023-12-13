@@ -9,8 +9,8 @@
 
     color: black;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-image 0.3s ease;
-
-    align-items: center;
+/* 
+    align-items: flex-start; */
 }
 
 .card-container.hovered {
@@ -30,10 +30,14 @@
     margin: 0.5rem 5%;
 }
 
+
+
 .card-title {
     font-size: 1.2em;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
+    align-content: center;
+
 }
 
 .card-btn {
@@ -47,7 +51,15 @@
     margin: 0.5rem;
 }
 
+.alignleft {
+     text-align: left; 
+     padding-left: 1rem;
+}
 
+.alignleft-double {
+    text-align: left; 
+    padding-left: 2rem;
+}
 
 .link {
     color: #222528;
@@ -55,6 +67,7 @@
     transition: color 0.3s ease;
     font-weight: bold;
     text-decoration-line: underline;
+   
 }
 
 
