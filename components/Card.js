@@ -58,9 +58,8 @@ export const Card = ({ card }) => {
         </div>
       )}
 
-      <br></br>
-
       <div className='alignleft'>
+        {testpages && <br></br>}
         {testpages &&
           testpages.map((page, i) => {
             const [url, urlpath] = Object.entries(page)[0]
@@ -81,7 +80,6 @@ export const Card = ({ card }) => {
       </div>
 
       <div className='alignleft'>
-        {coderun && <br></br>}
         {coderun &&
           coderun.map((page, i) => {
             const [url, obj] = Object.entries(page)[0]
