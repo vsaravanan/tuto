@@ -163,8 +163,12 @@ card = {
       'question: max_slice_sum':
         'https://app.codility.com/programmers/lessons/9-maximum_slice_problem/max_slice_sum/',
     },
+    {
+      'question: mini_max_sum': 'https://www.hackerrank.com/challenges/mini-max-sum/problem',
+    },
   ],
 
+  //
   coderun: [
     {
       'odd_occurrences': {
@@ -224,10 +228,24 @@ card = {
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/max_slice_sum.js',
       },
     },
+    {
+      'solution: mini_max_sum': {
+        commands: ['', 'mini_max_sum([1, 2, 3, 4, 5])'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/mini_max_sum.js',
+      },
+    },
   ],
 }
 data.push(card)
-//
+
+// {
+//   'solution: mini_max_sum': {
+//     commands: ['', 'aaaaaaa'],
+//     filePath:
+//       'aaaaaa',
+//   },
+// },
 
 card = {
   testpages: [{ 'Rest vs Message': 'https://saravanjs.com:8001/microservices/restVsMessage.pdf' }],

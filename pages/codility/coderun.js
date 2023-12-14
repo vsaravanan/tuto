@@ -9,6 +9,7 @@ import { max_product_three } from '@/components/codility/max_product_three'
 import { maxOccurrence } from '@/components/codility/maxOccurrence'
 import 'styles/sourcecode.css'
 import { max_slice_sum } from '@/components/codility/max_slice_sum'
+import { mini_max_sum } from '@/components/codility/mini_max_sum'
 
 const call_count_triangles = p => {
   return count_triangles(p)
@@ -40,6 +41,10 @@ const call_maxOccurrence = p => {
 
 const call_max_slice_sum = p => {
   return max_slice_sum(p)
+}
+
+const call_mini_max_sum = p => {
+  return mini_max_sum(p)
 }
 
 const coderun = () => {
