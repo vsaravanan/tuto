@@ -181,6 +181,14 @@ card = {
     {
       'cyclic_rotation': 'https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/',
     },
+    {
+      'common_prime_divisors':
+        'https://app.codility.com/programmers/lessons/12-euclidean_algorithm/common_prime_divisors/',
+    },
+    {
+      'climbing_the_leaderboard':
+        'https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem',
+    },
   ],
 }
 data.push(card)
@@ -301,6 +309,24 @@ card = {
         ],
         filePath:
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/cyclic_rotation.js',
+      },
+    },
+    {
+      'common_prime_divisors': {
+        commands: ['', 'common_prime_divisors([15, 10, 3],[75, 30, 5])'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/common_prime_divisors.js',
+      },
+    },
+
+    {
+      'climbing_the_leaderboard': {
+        commands: [
+          'climbing_the_leaderboard([100, 90, 90, 80, 75, 60], [50, 65, 77, 90, 102])',
+          'climbing_the_leaderboard([100, 90, 90, 80, 75, 60], [50])',
+        ],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/climbing_the_leaderboard.js',
       },
     },
   ],
