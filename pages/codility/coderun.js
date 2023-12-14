@@ -63,8 +63,8 @@ const call_tape_equilibrium = p => {
   return tape_equilibrium(p)
 }
 
-const call_tie_ropes = p => {
-  return tie_ropes(p)
+const call_tie_ropes = (p, n) => {
+  return tie_ropes(p, n)
 }
 
 const coderun = () => {
