@@ -230,7 +230,7 @@ card = {
     },
     {
       'solution: mini_max_sum': {
-        commands: ['', 'mini_max_sum([1, 2, 3, 4, 5])'],
+        commands: ['mini_max_sum([2,3,1,4,5])', 'mini_max_sum([1,3,7,9,5])'],
         filePath:
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/mini_max_sum.js',
       },
