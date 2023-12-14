@@ -16,6 +16,7 @@ import { tape_equilibrium } from '@/components/codility/tape_equilibrium'
 import { tie_ropes } from '@/components/codility/tie_ropes'
 import { cyclic_rotation } from '@/components/codility/cyclic_rotation'
 import { common_prime_divisors } from '@/components/codility/common_prime_divisors'
+import { climbing_the_leaderboard } from '@/components/codility/climbing_the_leaderboard'
 
 const call_count_triangles = p => {
   return count_triangles(p)
@@ -75,6 +76,10 @@ const call_cyclic_rotation = (p, n) => {
 
 const call_common_prime_divisors = (p, n) => {
   return common_prime_divisors(p, n)
+}
+
+const call_climbing_the_leaderboard = (p, n) => {
+  return climbing_the_leaderboard(p, n)
 }
 
 const coderun = () => {
