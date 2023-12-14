@@ -171,9 +171,15 @@ card = {
     {
       'mini_max_sum': 'https://www.hackerrank.com/challenges/mini-max-sum/problem',
     },
+    {
+      'tape_equilibrium':
+        'https://app.codility.com/programmers/lessons/3-time_complexity/tape_equilibrium/',
+    },
   ],
 }
 data.push(card)
+
+//
 
 card = {
   title: 'Codility solutions',
@@ -263,18 +269,24 @@ card = {
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/palindrome.js',
       },
     },
+
+    {
+      'tape_equilibrium': {
+        commands: ['tape_equilibrium()', 'tape_equilibrium([3, -1, 2, -4, 3])'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/tape_equilibrium.js',
+      },
+    },
   ],
 }
 data.push(card)
 
 // {
 //   'mini_max_sum': {
-//     commands: ['', 'aaaaaaa'],
+//     commands: ['', 'aaaaaaa(bbbbbbb)'],
 //     filePath:
-//       'aaaaaa',
+//       'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/aaaaaa.js',
 //   },
 // },
-
-//
 
 export default data
