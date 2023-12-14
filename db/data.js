@@ -159,6 +159,10 @@ card = {
       'question: max_product_three':
         'https://app.codility.com/programmers/lessons/6-sorting/max_product_of_three/',
     },
+    {
+      'question: max_slice_sum':
+        'https://app.codility.com/programmers/lessons/9-maximum_slice_problem/max_slice_sum/',
+    },
   ],
 
   coderun: [
@@ -209,6 +213,13 @@ card = {
     {
       'solution: maxOccurrence': {
         commands: ['', 'maxOccurrence("helloworld")'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/maxOccurrence.js',
+      },
+    },
+    {
+      'solution: max_slice_sum': {
+        commands: ['max_slice_sum([2])', 'max_slice_sum([2, -1, 4, -2, 3])'],
         filePath:
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/maxOccurrence.js',
       },

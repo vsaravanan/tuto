@@ -8,6 +8,7 @@ import { max_non_overlapping_segments } from '@/components/codility/max_non_over
 import { max_product_three } from '@/components/codility/max_product_three'
 import { maxOccurrence } from '@/components/codility/maxOccurrence'
 import 'styles/sourcecode.css'
+import { max_slice_sum } from '@/components/codility/max_slice_sum'
 
 const call_count_triangles = p => {
   return count_triangles(p)
@@ -35,6 +36,10 @@ const call_max_product_three = (p, n) => {
 
 const call_maxOccurrence = p => {
   return maxOccurrence(p)
+}
+
+const call_max_slice_sum = p => {
+  return max_slice_sum(p)
 }
 
 const coderun = () => {
