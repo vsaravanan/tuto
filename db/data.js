@@ -251,6 +251,18 @@ card = {
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/change_coins.js',
       },
     },
+    {
+      'palindrome': {
+        commands: [
+          'palindrome("bacab")',
+          'palindrome("racecar")',
+          'palindrome("abba")',
+          'palindrome("cat")',
+        ],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/palindrome.js',
+      },
+    },
   ],
 }
 data.push(card)

@@ -11,6 +11,7 @@ import 'styles/sourcecode.css'
 import { max_slice_sum } from '@/components/codility/max_slice_sum'
 import { mini_max_sum } from '@/components/codility/mini_max_sum'
 import { change_coins } from '@/components/codility/change_coins'
+import { palindrome } from '@/components/codility/palindrome'
 
 const call_count_triangles = p => {
   return count_triangles(p)
@@ -52,6 +53,10 @@ const call_change_coins = p => {
   return change_coins(p)
 }
 
+const call_palindrome = p => {
+  return palindrome(p)
+}
+
 const coderun = () => {
   const router = useRouter()
   const { filePath, commands } = router.query
@@ -71,6 +76,8 @@ const coderun = () => {
                   d = d.map((c, i) => {
                     return <div key={i}> {c + ', '} </div>
                   })
+                } else if (typeof d == 'boolean') {
+                  d = `${d}`
                 }
 
                 return (
