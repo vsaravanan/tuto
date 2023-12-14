@@ -13,6 +13,7 @@ import { mini_max_sum } from '@/components/codility/mini_max_sum'
 import { change_coins } from '@/components/codility/change_coins'
 import { palindrome } from '@/components/codility/palindrome'
 import { tape_equilibrium } from '@/components/codility/tape_equilibrium'
+import { tie_ropes } from '@/components/codility/tie_ropes'
 
 const call_count_triangles = p => {
   return count_triangles(p)
@@ -60,6 +61,10 @@ const call_palindrome = p => {
 
 const call_tape_equilibrium = p => {
   return tape_equilibrium(p)
+}
+
+const call_tie_ropes = p => {
+  return tie_ropes(p)
 }
 
 const coderun = () => {

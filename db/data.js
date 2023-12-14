@@ -175,6 +175,9 @@ card = {
       'tape_equilibrium':
         'https://app.codility.com/programmers/lessons/3-time_complexity/tape_equilibrium/',
     },
+    {
+      'tie_ropes': 'https://app.codility.com/programmers/lessons/16-greedy_algorithms/tie_ropes/',
+    },
   ],
 }
 data.push(card)
@@ -275,6 +278,14 @@ card = {
         commands: ['tape_equilibrium()', 'tape_equilibrium([3, -1, 2, -4, 3])'],
         filePath:
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/tape_equilibrium.js',
+      },
+    },
+
+    {
+      'tie_ropes': {
+        commands: ['', 'tie_ropes(4, [1, 2, 3, 4, 1, 1, 3])'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/tie_ropes.js',
       },
     },
   ],
