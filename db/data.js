@@ -178,6 +178,9 @@ card = {
     {
       'tie_ropes': 'https://app.codility.com/programmers/lessons/16-greedy_algorithms/tie_ropes/',
     },
+    {
+      'cyclic_rotation': 'https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/',
+    },
   ],
 }
 data.push(card)
@@ -286,6 +289,18 @@ card = {
         commands: ['', 'tie_ropes(4, [1, 2, 3, 4, 1, 1, 3])'],
         filePath:
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/tie_ropes.js',
+      },
+    },
+
+    {
+      'cyclic_rotation': {
+        commands: [
+          'cyclic_rotation()',
+          'cyclic_rotation([0, 0, 0], 1)',
+          'cyclic_rotation([1, 2, 3, 4], 4)',
+        ],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/cyclic_rotation.js',
       },
     },
   ],

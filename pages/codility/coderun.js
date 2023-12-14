@@ -14,6 +14,7 @@ import { change_coins } from '@/components/codility/change_coins'
 import { palindrome } from '@/components/codility/palindrome'
 import { tape_equilibrium } from '@/components/codility/tape_equilibrium'
 import { tie_ropes } from '@/components/codility/tie_ropes'
+import { cyclic_rotation } from '@/components/codility/cyclic_rotation'
 
 const call_count_triangles = p => {
   return count_triangles(p)
@@ -65,6 +66,10 @@ const call_tape_equilibrium = p => {
 
 const call_tie_ropes = (p, n) => {
   return tie_ropes(p, n)
+}
+
+const call_cyclic_rotation = (p, n) => {
+  return cyclic_rotation(p, n)
 }
 
 const coderun = () => {
