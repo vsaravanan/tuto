@@ -221,7 +221,7 @@ card = {
       'solution: max_slice_sum': {
         commands: ['max_slice_sum([2])', 'max_slice_sum([2, -1, 4, -2, 3])'],
         filePath:
-          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/maxOccurrence.js',
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/max_slice_sum.js',
       },
     },
   ],
