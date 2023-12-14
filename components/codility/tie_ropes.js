@@ -17,5 +17,3 @@ export const tie_ropes = (k, b) => {
 
   return cnt
 }
-
-// console.log(tie_ropes(4, [1, 2, 3, 4, 1, 1, 3])) // 3
