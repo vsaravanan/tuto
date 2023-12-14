@@ -181,6 +181,10 @@ card = {
     {
       'cyclic_rotation': 'https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/',
     },
+    {
+      'common_prime_divisors':
+        'https://app.codility.com/programmers/lessons/12-euclidean_algorithm/common_prime_divisors/',
+    },
   ],
 }
 data.push(card)
@@ -301,6 +305,13 @@ card = {
         ],
         filePath:
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/cyclic_rotation.js',
+      },
+    },
+    {
+      'common_prime_divisors': {
+        commands: ['', 'common_prime_divisors([15, 10, 3],[75, 30, 5])'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/common_prime_divisors.js',
       },
     },
   ],
