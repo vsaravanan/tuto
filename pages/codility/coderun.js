@@ -10,6 +10,7 @@ import { maxOccurrence } from '@/components/codility/maxOccurrence'
 import 'styles/sourcecode.css'
 import { max_slice_sum } from '@/components/codility/max_slice_sum'
 import { mini_max_sum } from '@/components/codility/mini_max_sum'
+import { change_coins } from '@/components/codility/change_coins'
 
 const call_count_triangles = p => {
   return count_triangles(p)
@@ -47,6 +48,10 @@ const call_mini_max_sum = p => {
   return mini_max_sum(p)
 }
 
+const call_change_coins = p => {
+  return change_coins(p)
+}
+
 const coderun = () => {
   const router = useRouter()
   const { filePath, commands } = router.query
@@ -63,7 +68,9 @@ const coderun = () => {
               .map((c, i) => {
                 let d = eval(`call_${c}`)
                 if (Object.prototype.toString.call(d) === '[object Array]') {
-                  d = d.map(c => c + ', ')
+                  d = d.map((c, i) => {
+                    return <div key={i}> {c + ', '} </div>
+                  })
                 }
 
                 return (

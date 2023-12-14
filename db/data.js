@@ -147,6 +147,11 @@ data.push(card)
 //
 
 card = {
+  testpages: [{ 'Rest vs Message': 'https://saravanjs.com:8001/microservices/restVsMessage.pdf' }],
+}
+data.push(card)
+
+card = {
   title: 'Codility tests',
 
   testpages: [
@@ -235,6 +240,13 @@ card = {
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/mini_max_sum.js',
       },
     },
+    {
+      'solution: change_coins': {
+        commands: ['change_coins(375)', 'change_coins(520)'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/change_coins.js',
+      },
+    },
   ],
 }
 data.push(card)
@@ -247,10 +259,6 @@ data.push(card)
 //   },
 // },
 
-card = {
-  testpages: [{ 'Rest vs Message': 'https://saravanjs.com:8001/microservices/restVsMessage.pdf' }],
-}
-data.push(card)
 //
 
 export default data
