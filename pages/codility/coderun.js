@@ -18,6 +18,7 @@ import { cyclic_rotation } from '@/components/codility/cyclic_rotation'
 import { common_prime_divisors } from '@/components/codility/common_prime_divisors'
 import { climbing_the_leaderboard } from '@/components/codility/climbing_the_leaderboard'
 import { binary_gap } from '@/components/codility/binary_gap'
+import { diagonal_difference } from '@/components/codility/diagonal_difference'
 
 const call_count_triangles = p => {
   return count_triangles(p)
@@ -85,6 +86,10 @@ const call_binary_gap = (p, n) => {
 
 const call_tape_equilibrium = (p, n) => {
   return tape_equilibrium(p, n)
+}
+
+const call_diagonal_difference = p => {
+  return diagonal_difference(p)
 }
 
 const coderun = () => {

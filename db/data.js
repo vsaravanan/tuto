@@ -196,6 +196,9 @@ card = {
       'tape_equilibrium':
         'https://app.codility.com/programmers/lessons/3-time_complexity/tape_equilibrium/',
     },
+    {
+      'diagonal_difference': 'https://www.hackerrank.com/challenges/diagonal-difference/problem/',
+    },
   ],
 }
 data.push(card)
@@ -350,6 +353,14 @@ card = {
         commands: ['', 'tape_equilibrium([3, 1, 2, 4, 3])'],
         filePath:
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/tape_equilibrium.js',
+      },
+    },
+
+    {
+      'diagonal_difference': {
+        commands: ['', 'diagonal_difference( Array([11, 2, 4],  [4, 5, 6], [10, 8, -12] ) )'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/diagonal_difference.js',
       },
     },
   ],
