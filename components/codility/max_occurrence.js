@@ -1,4 +1,4 @@
-export const maxOccurrence = text => {
+export const max_occurrence = text => {
   console.log(text)
 
   const charOccurrences = {}

@@ -254,10 +254,10 @@ card = {
       },
     },
     {
-      'maxOccurrence': {
-        commands: ['', 'maxOccurrence("helloworld")'],
+      'max_occurrence': {
+        commands: ['', 'max_occurrence("helloworld")'],
         filePath:
-          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/maxOccurrence.js',
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/max_occurrence.js',
       },
     },
     {
