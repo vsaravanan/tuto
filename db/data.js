@@ -190,7 +190,11 @@ card = {
         'https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem',
     },
     {
-      'binary-gap': 'https://leetcode.com/problems/binary-gap/',
+      'binary_gap': 'https://leetcode.com/problems/binary-gap/',
+    },
+    {
+      'tape_equilibrium':
+        'https://app.codility.com/programmers/lessons/3-time_complexity/tape_equilibrium/',
     },
   ],
 }
@@ -338,6 +342,14 @@ card = {
         commands: ['', 'binary_gap(529)'],
         filePath:
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/binary_gap.js',
+      },
+    },
+
+    {
+      'tape_equilibrium': {
+        commands: ['', 'tape_equilibrium([3, 1, 2, 4, 3])'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/tape_equilibrium.js',
       },
     },
   ],

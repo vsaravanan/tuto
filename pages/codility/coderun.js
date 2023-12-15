@@ -63,10 +63,6 @@ const call_palindrome = p => {
   return palindrome(p)
 }
 
-const call_tape_equilibrium = p => {
-  return tape_equilibrium(p)
-}
-
 const call_tie_ropes = (p, n) => {
   return tie_ropes(p, n)
 }
@@ -85,6 +81,10 @@ const call_climbing_the_leaderboard = (p, n) => {
 
 const call_binary_gap = (p, n) => {
   return binary_gap(p, n)
+}
+
+const call_tape_equilibrium = (p, n) => {
+  return tape_equilibrium(p, n)
 }
 
 const coderun = () => {
