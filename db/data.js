@@ -189,6 +189,9 @@ card = {
       'climbing_the_leaderboard':
         'https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem',
     },
+    {
+      'binary-gap': 'https://leetcode.com/problems/binary-gap/',
+    },
   ],
 }
 data.push(card)
@@ -327,6 +330,14 @@ card = {
         ],
         filePath:
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/climbing_the_leaderboard.js',
+      },
+    },
+
+    {
+      'binary_gap': {
+        commands: ['', 'binary_gap(529)'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/binary_gap.js',
       },
     },
   ],

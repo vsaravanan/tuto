@@ -17,6 +17,7 @@ import { tie_ropes } from '@/components/codility/tie_ropes'
 import { cyclic_rotation } from '@/components/codility/cyclic_rotation'
 import { common_prime_divisors } from '@/components/codility/common_prime_divisors'
 import { climbing_the_leaderboard } from '@/components/codility/climbing_the_leaderboard'
+import { binary_gap } from '@/components/codility/binary_gap'
 
 const call_count_triangles = p => {
   return count_triangles(p)
@@ -80,6 +81,10 @@ const call_common_prime_divisors = (p, n) => {
 
 const call_climbing_the_leaderboard = (p, n) => {
   return climbing_the_leaderboard(p, n)
+}
+
+const call_binary_gap = (p, n) => {
+  return binary_gap(p, n)
 }
 
 const coderun = () => {
