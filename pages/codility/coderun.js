@@ -19,6 +19,7 @@ import { common_prime_divisors } from '@/components/codility/common_prime_diviso
 import { climbing_the_leaderboard } from '@/components/codility/climbing_the_leaderboard'
 import { binary_gap } from '@/components/codility/binary_gap'
 import { diagonal_difference } from '@/components/codility/diagonal_difference'
+import { permutator } from '@/components/codility/permutator'
 
 const call_count_triangles = p => {
   return count_triangles(p)
@@ -90,6 +91,10 @@ const call_tape_equilibrium = (p, n) => {
 
 const call_diagonal_difference = p => {
   return diagonal_difference(p)
+}
+
+const call_permutator = p => {
+  return permutator(p)
 }
 
 const coderun = () => {

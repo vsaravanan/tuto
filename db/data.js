@@ -196,6 +196,9 @@ card = {
     {
       'diagonal_difference': 'https://www.hackerrank.com/challenges/diagonal-difference/problem/',
     },
+    {
+      'permutator': 'https://leetcode.com/problems/permutations/',
+    },
   ],
 }
 data.push(card)
@@ -350,6 +353,13 @@ card = {
         commands: ['', 'diagonal_difference( Array([11, 2, 4],  [4, 5, 6], [10, 8, -12] ) )'],
         filePath:
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/diagonal_difference.js',
+      },
+    },
+    {
+      'permutator': {
+        commands: ['', 'permutator(["c", "a", "t"])', 'permutator(["a", "b", "c","d"])'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/permutator.js',
       },
     },
   ],
