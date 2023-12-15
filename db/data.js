@@ -362,6 +362,13 @@ card = {
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/permutator.js',
       },
     },
+    {
+      'factorial': {
+        commands: ['factorial(3n)', 'factorial(4n)', 'factorial(5n)', 'factorial(100n)'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/factorial.js',
+      },
+    },
   ],
 }
 data.push(card)

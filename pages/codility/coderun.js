@@ -20,6 +20,7 @@ import { climbing_the_leaderboard } from '@/components/codility/climbing_the_lea
 import { binary_gap } from '@/components/codility/binary_gap'
 import { diagonal_difference } from '@/components/codility/diagonal_difference'
 import { permutator } from '@/components/codility/permutator'
+import { factorial } from '@/components/codility/factorial'
 
 const call_count_triangles = p => {
   return count_triangles(p)
@@ -97,6 +98,12 @@ const call_permutator = p => {
   return permutator(p)
 }
 
+const call_factorial = p => {
+  let a = factorial(p)
+  console.log(a)
+  return a
+}
+
 const coderun = () => {
   const router = useRouter()
   const { filePath, commands } = router.query
@@ -117,6 +124,8 @@ const coderun = () => {
                     return <div key={i}> {c + ', '} </div>
                   })
                 } else if (typeof d == 'boolean') {
+                  d = `${d}`
+                } else if (typeof d == 'bigint') {
                   d = `${d}`
                 }
 
