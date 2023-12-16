@@ -199,6 +199,10 @@ card = {
     {
       'permutator': 'https://leetcode.com/problems/permutations/',
     },
+    {
+      'array_manipulation':
+        'https://www.hackerrank.com/challenges/one-month-preparation-kit-crush/problem',
+    },
   ],
 }
 data.push(card)
@@ -367,6 +371,13 @@ card = {
         commands: ['factorial(3n)', 'factorial(4n)', 'factorial(5n)', 'factorial(100n)'],
         filePath:
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/factorial.js',
+      },
+    },
+    {
+      'array_manipulation': {
+        commands: ['', 'array_manipulation()'],
+        filePath:
+          'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/array_manipulation.js',
       },
     },
   ],

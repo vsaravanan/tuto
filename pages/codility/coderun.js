@@ -21,6 +21,7 @@ import { binary_gap } from '@/components/codility/binary_gap'
 import { diagonal_difference } from '@/components/codility/diagonal_difference'
 import { permutator } from '@/components/codility/permutator'
 import { factorial } from '@/components/codility/factorial'
+import { array_manipulation } from '@/components/codility/array_manipulation'
 
 const call_count_triangles = p => {
   return count_triangles(p)
@@ -102,6 +103,10 @@ const call_factorial = p => {
   let a = factorial(p)
   console.log(a)
   return a
+}
+
+const call_array_manipulation = p => {
+  return array_manipulation(p)
 }
 
 const coderun = () => {
