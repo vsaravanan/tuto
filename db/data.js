@@ -34,8 +34,8 @@ card = {
   github: 'https://github.com/vsaravanan/spring-reactive-flyway',
   swagger: 'https://saravanjs.com:10101/swagger-ui/index.html',
   testpages: [
-    { ' ssl  demo (slow) ': 'https://saravanjs.com:10101/api2/v1/students' },
-    { ' http demo (fast) ': 'http://saravanjs.com:10100/api2/v1/students' },
+    { ' ssl  demo (slow) ': 'https://saravanjs.com:10101/api/v1/students' },
+    { ' http demo (fast) ': 'http://saravanjs.com:10100/api/v1/students' },
   ],
   sourcecodes: [
     {
