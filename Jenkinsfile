@@ -64,7 +64,7 @@ stage('Install') {
     withCredentials([string(credentialsId: 'colordust', variable: 'colordust')]) {
         sshagent(['ecdsa']) {
             sh  ' ssh viswar@sjsapp bash /data/scripts/archive.sh ${JOB_NAME} '
-            sh  'ssh viswar@sjsapp bash /data/scripts/install.sh ${JOB_NAME} ${colordust} '
+            sh  ' ssh viswar@sjsapp bash /data/scripts/install.sh ${JOB_NAME} ${colordust} '
         }
     }
 }
