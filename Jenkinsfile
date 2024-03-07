@@ -1,4 +1,4 @@
-/* groovylint-disable Indentation */
+/* groovylint-disable Indentation  */
 node {
     def jenkinsConfig = env.jenkins_config_home
     def jenkinsRoot = "${JENKINS_HOME}/workspace"
@@ -76,5 +76,4 @@ stage('Install') {
     body = " job name : ${JOB_NAME} \n Version : ${appVer} \n Jenkins : ${BUILD_URL} \n  Commit Message : ${lastCommitMessage} "
     emailext body: body, subject: "${JOB_NAME} was deployed", to: 'saravanan.resume@gmail.com', from: 'jenkins'
         }
-
 }
