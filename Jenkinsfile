@@ -34,19 +34,19 @@ node {
             echo "appVer: ${appVer}"
         }
 
-        // stage('Build') {
-        //     sh "PATH=$PATH:/home/viswar/.yarn/bin; yarn --error"
-        // }
+        stage('Build') {
+            sh "PATH=$PATH:/home/viswar/.yarn/bin; yarn --error"
+        }
 
-        // stage('Package') {
-        //     sh "cd ${jenkinsRoot}; pwd; tar -czf ${WORKSPACE}.tar.gz ${JOB_NAME} "
-        // }
+        stage('Package') {
+            sh "cd ${jenkinsRoot}; pwd; tar -czf ${WORKSPACE}.tar.gz ${JOB_NAME} "
+        }
 
-        // stage('Deploy') {
-        //     sshagent(['ecdsa']) {
-        //         sh 'scp ${WORKSPACE}.tar.gz viswar@sjsapp:/data/tmp '
-        //     }
-        // }
+        stage('Deploy') {
+            sshagent(['ecdsa']) {
+                sh 'scp ${WORKSPACE}.tar.gz viswar@sjsapp:/data/tmp '
+            }
+        }
 
         stage('Install') {
             withCredentials([string(credentialsId: 'colordust', variable: 'colordust')]) {
@@ -60,18 +60,19 @@ node {
         stage('Email') {
             echo 'MVS job success'
             body = "SUCCESS \n job name : ${JOB_NAME} \n Version : ${appVer} \n Jenkins : " +
-                       "${BUILD_URL} \n  Commit Message : ${lastCommitMessage} "
+                    "${BUILD_URL} \n  Commit Message : ${lastCommitMessage} "
             emailext body: body,
-            subject: "${appVer} was deployed SUCCESS",
-            to: 'saravanan.resume@gmail.com',
-            from: 'jenkins'
+                    subject: "${appVer} was deployed SUCCESS",
+                    to: 'saravanan.resume@gmail.com',
+                    from: 'jenkins'
         }
     } catch (Exception error) {
-            echo 'MVS failed'
-            body = "FAILED \n job name : ${JOB_NAME} \n Version : ${appVer} \n Jenkins : "
-            "+${BUILD_URL} \n  Commit Message : ${lastCommitMessage} "
-            emailext body: body + error.toString(),
-            subject: "${appVer} was deployed but FAILED" ,
-            to: 'saravanan.resume@gmail.com',
-            from: 'jenkins'    }
+        echo 'MVS failed'
+        body = "FAILED \n job name : ${JOB_NAME} \n Version : ${appVer} \n Jenkins : " +
+                "${BUILD_URL} \n  Commit Message : ${lastCommitMessage} "
+        emailext body: body + error.toString(),
+                subject: "${appVer} was deployed but FAILED" ,
+                to: 'saravanan.resume@gmail.com',
+                from: 'jenkins'
+    }
 }
