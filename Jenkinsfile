@@ -51,12 +51,10 @@ node {
         // }
 
         stage('Install') {
-            catchError(buildResult: 'SUCCESS') {
-                withCredentials([string(credentialsId: 'colordust', variable: 'colordust')]) {
-                    sshagent(['ecdsa']) {
-                        sh 'ssh viswar@sjsapp bash /data/scripts/archive.sh ${JOB_NAME}'
-                        sh 'ssh viswar@sjsapp bash /data/scripts/install.sh ${JOB_NAME} ${colordust}'
-                    }
+            withCredentials([string(credentialsId: 'colordust', variable: 'colordust')]) {
+                sshagent(['ecdsa']) {
+                    sh 'ssh viswar@sjsapp bash /data/scripts/archive.sh ${JOB_NAME} --error'
+                    sh 'ssh viswar@sjsapp bash /data/scripts/install.sh ${JOB_NAME} ${colordust} --error'
                 }
             }
         }
