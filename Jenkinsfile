@@ -1,7 +1,6 @@
 #!groovy
 
 node {
-    def jenkinsConfig = "${env.jenkins_config_home}/${JOB_NAME}"
     def jenkinsRoot = "${JENKINS_HOME}/workspace"
     def appVer = ''
     def lastCommitMessage = ''
@@ -14,9 +13,6 @@ node {
         }
 
         stage('Environment') {
-            jenkinsConfig = "${jenkinsConfig}/${JOB_NAME}"
-            echo "JENKINS_CONFIG: ${jenkinsConfig}"
-
             echo "JOB_NAME : ${JOB_NAME}"
             echo "BUILD_URL : ${BUILD_URL}"
             echo "JENKINS_HOME : ${JENKINS_HOME}"
@@ -53,12 +49,13 @@ node {
         }
 
         stage('Install') {
-            withCredentials([string(credentialsId: 'colordust', variable: 'colordust')]) {
+            withCredentials([string(credentialsId: 'colordust', variable: 'colordust'),
+                         string(variable: 'appVer', value: appVer)]) {
                 sshagent(['ecdsa']) {
                     sh 'ssh viswar@sjsapp bash /data/scripts/archive.sh ${JOB_NAME} ${appVer} --error'
                     sh 'ssh viswar@sjsapp bash /data/scripts/install.sh ${JOB_NAME} ${colordust} --error'
                 }
-            }
+                         }
         }
 
         stage('Email') {
