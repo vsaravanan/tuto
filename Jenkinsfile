@@ -1,3 +1,5 @@
+#!groovy
+
 node {
     try {
         def jenkinsConfig = "${env.jenkins_config_home}/${JOB_NAME}"
@@ -36,19 +38,19 @@ node {
             echo "appVer: ${appVer}"
         }
 
-        // stage('Build') {
-        //     sh "PATH=$PATH:/home/viswar/.yarn/bin; yarn"
-        // }
+        stage('Build') {
+            sh "PATH=$PATH:/home/viswar/.yarn/bin; yarn --error"
+        }
 
-        // stage('Package') {
-        //     sh "cd ${jenkinsRoot}; pwd; tar -czf ${WORKSPACE}.tar.gz ${JOB_NAME}"
-        // }
+        stage('Package') {
+            sh "cd ${jenkinsRoot}; pwd; tar -czf ${WORKSPACE}.tar.gz ${JOB_NAME} --error"
+        }
 
-        // stage('Deploy') {
-        //     sshagent(['ecdsa']) {
-        //         sh 'scp ${WORKSPACE}.tar.gz viswar@sjsapp:/data/tmp'
-        //     }
-        // }
+        stage('Deploy') {
+            sshagent(['ecdsa']) {
+                sh 'scp ${WORKSPACE}.tar.gz viswar@sjsapp:/data/tmp --error'
+            }
+        }
 
         stage('Install') {
             withCredentials([string(credentialsId: 'colordust', variable: 'colordust')]) {
@@ -60,13 +62,16 @@ node {
         }
 
         stage('Email') {
-            body = " job name : ${JOB_NAME} \n Version : ${appVer} \n Jenkins : ${BUILD_URL} \n  Commit Message : ${lastCommitMessage} "
-            emailext body: body, subject: "${JOB_NAME} was deployed", to: 'saravanan.resume@gmail.com', from: 'jenkins'
+            body = "SUCCESS job name : ${JOB_NAME} \n Version : ${appVer} \n Jenkins : ${BUILD_URL} \n  Commit Message : ${lastCommitMessage} "
+            emailext body: body,
+            subject: "${JOB_NAME} was deployed",
+            to: 'saravanan.resume@gmail.com',
+            from: 'jenkins'
         }
     } catch (Exception e) {
-        // handle errors if any
-        // echo 'Pipeline Failed - Pausing for Manual Intervention'
-        // input 'Resume Pipeline?'
-        throw e
-    }
+            body = "FAILED job name : ${JOB_NAME} \n Version : ${appVer} \n Jenkins : ${BUILD_URL} \n  Commit Message : ${lastCommitMessage} "
+            emailext body: body + e.toString() + ' \n\n ' + error.printStackTrace(),
+            subject: "${JOB_NAME} was deployed",
+            to: 'saravanan.resume@gmail.com',
+            from: 'jenkins'    }
 }
