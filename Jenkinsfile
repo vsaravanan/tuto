@@ -3,12 +3,11 @@
     pipeline {
         agent any
 
-        def jenkinsConfig = env.jenkins_config_home
-        def jenkinsRoot = "${JENKINS_HOME}/workspace"
-        def appVer = ''
-        def lastCommitMessage = ''
-
         environment {
+            jenkinsConfig = "${env.jenkins_config_home}/${JOB_NAME}"
+            jenkinsRoot = "${JENKINS_HOME}/workspace"
+            appVer = ''
+            lastCommitMessage = ''
             colordust = credentials('colordust')
         }
 
@@ -80,4 +79,3 @@
             }
         }
     }
-
