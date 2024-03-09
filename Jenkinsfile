@@ -48,9 +48,12 @@ node {
 
         stage('Deploy') {
             sshagent(['ecdsa']) {
-                result=sh(returnStderr: true, script: 'scp ${WORKSPACE}.tar.gz viswar@sjsapp:/data/tmp --error ').toString().trim()
-                throw "scp failed " if ( result.length() > 0 )
-
+                result = sh(returnStderr: true,
+                    script: "scp ${WORKSPACE}.tar.gz " +
+                    ' viswar@sjsapp:/data/tmp --error ').toString().trim()
+                if (result.length() > 0) {
+                    throw 'scp failed '
+                }
             }
         }
 
@@ -64,7 +67,7 @@ node {
         }
 
         stage('Email') {
-            echo "MVS job success"
+            echo 'MVS job success'
             body = "SUCCESS job name : ${JOB_NAME} \n Version : ${appVer} \n Jenkins : " +
                        "${BUILD_URL} \n  Commit Message : ${lastCommitMessage} "
             emailext body: body,
@@ -73,9 +76,9 @@ node {
             from: 'jenkins'
         }
     } catch (Exception e) {
-            echo "MVS failed"
+            echo 'MVS failed'
             body = "FAILED job name : ${JOB_NAME} \n Version : ${appVer} \n Jenkins : "
-                        "+${BUILD_URL} \n  Commit Message : ${lastCommitMessage} "
+        "+${BUILD_URL} \n  Commit Message : ${lastCommitMessage} "
             emailext body: body + e.toString() + ' \n\n ' + error.printStackTrace(),
             subject: "${JOB_NAME} was deployed",
             to: 'saravanan.resume@gmail.com',
