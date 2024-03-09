@@ -1,12 +1,13 @@
 #!groovy
 
 node {
+    def jenkinsConfig = "${env.jenkins_config_home}/${JOB_NAME}"
+    def jenkinsRoot = "${JENKINS_HOME}/workspace"
+    def appVer = ''
+    def lastCommitMessage = ''
+    def colordust = credentials('colordust')
+
     try {
-        def jenkinsConfig = "${env.jenkins_config_home}/${JOB_NAME}"
-        def jenkinsRoot = "${JENKINS_HOME}/workspace"
-        def appVer = ''
-        def lastCommitMessage = ''
-        def colordust = credentials('colordust')
 
         stage('Clean') {
             sh 'pwd'
@@ -38,9 +39,9 @@ node {
             echo "appVer: ${appVer}"
         }
 
-        stage('Build') {
-            sh "PATH=$PATH:/home/viswar/.yarn/bin; yarn --error"
-        }
+        // stage('Build') {
+        //     sh "PATH=$PATH:/home/viswar/.yarn/bin; yarn --error"
+        // }
 
         stage('Package') {
             sh "cd ${jenkinsRoot}; pwd; tar -czf ${WORKSPACE}.tar.gz ${JOB_NAME} "
@@ -48,12 +49,7 @@ node {
 
         stage('Deploy') {
             sshagent(['ecdsa']) {
-                result = sh(returnStderr: true,
-                    script: "scp ${WORKSPACE}.tar.gz " +
-                    ' viswar@sjsapp:/data/tmp --error ').toString().trim()
-                if (result.length() > 0) {
-                    throw 'scp failed '
-                }
+                sh 'scp ${WORKSPACE}.tar.gz viswar@sjsapp:/data/tmp --error'
             }
         }
 
