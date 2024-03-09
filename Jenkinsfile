@@ -1,84 +1,83 @@
-/* groovylint-disable Indentation  */
+/* groovylint-disable Indentation */
 node {
-    def jenkinsConfig = env.jenkins_config_home
-    def jenkinsRoot = "${JENKINS_HOME}/workspace"
-    def appVer = ''
-    def lastCommitMessage = ''
+    pipeline {
+        agent any
 
-    environment {
-        colordust = credentials('colordust')
-    }
+        def jenkinsConfig = env.jenkins_config_home
+        def jenkinsRoot = "${JENKINS_HOME}/workspace"
+        def appVer = ''
+        def lastCommitMessage = ''
 
-    stage('Clean') {
-      sh   ' pwd '
-      sh   'rm -rf *  '
-    }
-
-  stage('Environment')
-        {
-    jenkinsConfig = "${jenkinsConfig}/${JOB_NAME}"
-    echo "JENKINS_CONFIG: ${jenkinsConfig}"
-
-    echo "JOB_NAME : ${JOB_NAME}"                // tutonui
-    echo "BUILD_URL : ${BUILD_URL}"              // https://web.saravanjs.com/job/tutonui/60/
-    echo "JENKINS_HOME : ${JENKINS_HOME}"        // /var/lib/jenkins
-    echo "WORKSPACE : ${WORKSPACE}"              // /var/lib/jenkins/workspace/tutonui
+        environment {
+            colordust = credentials('colordust')
         }
 
-  stage('Checkout')
-        {
-    checkout scm
-    gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
+        stages {
+            stage('Clean') {
+                sh 'pwd'
+                sh 'rm -rf *'
+            }
 
-    echo "gitCommit : ${gitCommit}"
+            stage('Environment') {
+                jenkinsConfig = "${jenkinsConfig}/${JOB_NAME}"
+                echo "JENKINS_CONFIG: ${jenkinsConfig}"
 
-    gitVersion = sh(returnStdout: true, script: 'git rev-list HEAD --count').toString().trim()
-    echo "gitVersion: ${gitVersion}"
+                echo "JOB_NAME : ${JOB_NAME}" // tutonui
+                echo "BUILD_URL : ${BUILD_URL}" // https://web.saravanjs.com/job/tutonui/60/
+                echo "JENKINS_HOME : ${JENKINS_HOME}" // /var/lib/jenkins
+                echo "WORKSPACE : ${WORKSPACE}" // /var/lib/jenkins/workspace/tutonui
+            }
 
-    lastCommitMessage = sh(returnStdout: true, script: 'git log -1 --format="%s" ').toString().trim()
-    appVer = "${JOB_NAME}.${BUILD_ID}.git-${gitVersion}"
-    echo "lastCommitMessage: ${lastCommitMessage} "
+            stage('Checkout') {
+                checkout scm
+                gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
 
-    echo "appVer: ${appVer}" // tutonui.60.git-47
-        }
+                echo "gitCommit : ${gitCommit}"
 
-  stage('Build')
-        {
-    sh " PATH=$PATH:/home/viswar/.yarn/bin; yarn "
-        }
+                gitVersion = sh(returnStdout: true, script: 'git rev-list HEAD --count').toString().trim()
+                echo "gitVersion: ${gitVersion}"
 
-  stage('Package')
-        {
-    sh " cd ${jenkinsRoot}; pwd;   tar -czf ${WORKSPACE}.tar.gz ${JOB_NAME} "
-        }
+                lastCommitMessage = sh(returnStdout: true, script: 'git log -1 --format="%s" ').toString().trim()
+                appVer = "${JOB_NAME}.${BUILD_ID}.git-${gitVersion}"
+                echo "lastCommitMessage: ${lastCommitMessage} "
 
-  stage('Deploy')
-        {
-    sshagent(['ecdsa'])
-            {
-                sh  ' scp ${WORKSPACE}.tar.gz  viswar@sjsapp:/data/tmp  '
+                echo "appVer: ${appVer}" // tutonui.60.git-47
+            }
+
+            stage('Build') {
+                sh "PATH=$PATH:/home/viswar/.yarn/bin; yarn"
+            }
+
+            stage('Package') {
+                sh "cd ${jenkinsRoot}; pwd; tar -czf ${WORKSPACE}.tar.gz ${JOB_NAME}"
+            }
+
+            stage('Deploy') {
+                sshagent(['ecdsa']) {
+                    sh 'scp ${WORKSPACE}.tar.gz viswar@sjsapp:/data/tmp'
+                }
+            }
+
+            stage('Install') {
+                withCredentials([string(credentialsId: 'colordust', variable: 'colordust')]) {
+                    sshagent(['ecdsa']) {
+                        sh 'ssh viswar@sjsapp bash /data/scripts/archive.sh ${JOB_NAME}'
+                        sh 'ssh viswar@sjsapp bash /data/scripts/install.sh ${JOB_NAME} ${colordust}'
+                    }
+                }
+            }
+
+            stage('Email') {
+                body = " job name : ${JOB_NAME} \n Version : ${appVer} \n Jenkins : ${BUILD_URL} \n  Commit Message : ${lastCommitMessage} "
+                emailext body: body, subject: "${JOB_NAME} was deployed", to: 'saravanan.resume@gmail.com', from: 'jenkins'
             }
         }
 
-stage('Install') {
-    withCredentials([string(credentialsId: 'colordust', variable: 'colordust')]) {
-        sshagent(['ecdsa']) {
-            sh  ' ssh viswar@sjsapp bash /data/scripts/archive.sh ${JOB_NAME} '
-            sh  ' ssh viswar@sjsapp bash /data/scripts/install.sh ${JOB_NAME} ${colordust} '
-        }
-    }
-}
-
-  stage('Email')
-        {
-    body = " job name : ${JOB_NAME} \n Version : ${appVer} \n Jenkins : ${BUILD_URL} \n  Commit Message : ${lastCommitMessage} "
-    emailext body: body, subject: "${JOB_NAME} was deployed", to: 'saravanan.resume@gmail.com', from: 'jenkins'
-        }
-
-    post {
-        failure {
-            echo 'Pipeline Failed - Pausing for Manual Intervention'
-            input 'Resume Pipeline?'
+        post {
+            failure {
+                echo 'Pipeline Failed - Pausing for Manual Intervention'
+                input 'Resume Pipeline?'
+            }
         }
     }
 }
