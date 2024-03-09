@@ -65,7 +65,8 @@ node {
         }
     } catch (Exception e) {
         // handle errors if any
-        echo 'Pipeline Failed - Pausing for Manual Intervention'
-        input 'Resume Pipeline?'
+        // echo 'Pipeline Failed - Pausing for Manual Intervention'
+        // input 'Resume Pipeline?'
+        throw e
     }
 }
