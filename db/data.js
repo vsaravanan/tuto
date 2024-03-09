@@ -20,7 +20,7 @@ card = {
     { database: '/database.html' },
     { realtime: '/realtime.html' },
     { jenkins: 'https://web.saravanjs.com/' },
-    { 'jenkins 2': 'https://upward-camel-endlessly.ngrok-free.app/' },
+    { ngrok: 'https://upward-camel-endlessly.ngrok-free.app/' },
   ],
 }
 data.push(card)
