@@ -34,24 +34,24 @@ node {
             echo "appVer: ${appVer}"
         }
 
-        stage('Build') {
-            sh "PATH=$PATH:/home/viswar/.yarn/bin; yarn --error"
-        }
+        // stage('Build') {
+        //     sh "PATH=$PATH:/home/viswar/.yarn/bin; yarn --error"
+        // }
 
-        stage('Package') {
-            sh "cd ${jenkinsRoot}; pwd; tar -czf ${WORKSPACE}.tar.gz ${JOB_NAME} "
-        }
+        // stage('Package') {
+        //     sh "cd ${jenkinsRoot}; pwd; tar -czf ${WORKSPACE}.tar.gz ${JOB_NAME} "
+        // }
 
-        stage('Deploy') {
-            sshagent(['ecdsa']) {
-                sh 'scp ${WORKSPACE}.tar.gz viswar@sjsapp:/data/tmp '
-            }
-        }
+        // stage('Deploy') {
+        //     sshagent(['ecdsa']) {
+        //         sh 'scp ${WORKSPACE}.tar.gz viswar@sjsapp:/data/tmp '
+        //     }
+        // }
 
         stage('Install') {
-            withCredentials([string(credentialsId: 'colordust', variable: 'colordust'),
-                         string(variable: 'appVer', value: appVer)]) {
+            withCredentials([string(credentialsId: 'colordust', variable: 'colordust')]) {
                 sshagent(['ecdsa']) {
+                    sh 'echo appVer ${appVer}'
                     sh 'ssh viswar@sjsapp bash /data/scripts/archive.sh ${JOB_NAME} ${appVer} --error'
                     sh 'ssh viswar@sjsapp bash /data/scripts/install.sh ${JOB_NAME} ${colordust} --error'
                 }
