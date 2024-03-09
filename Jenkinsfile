@@ -1,5 +1,5 @@
 /* groovylint-disable Indentation */
-node {
+
     pipeline {
         agent any
 
@@ -80,4 +80,4 @@ node {
             }
         }
     }
-}
+
