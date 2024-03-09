@@ -74,4 +74,11 @@ stage('Install') {
     body = " job name : ${JOB_NAME} \n Version : ${appVer} \n Jenkins : ${BUILD_URL} \n  Commit Message : ${lastCommitMessage} "
     emailext body: body, subject: "${JOB_NAME} was deployed", to: 'saravanan.resume@gmail.com', from: 'jenkins'
         }
+
+    post {
+        failure {
+            echo 'Pipeline Failed - Pausing for Manual Intervention'
+            input 'Resume Pipeline?'
+        }
+    }
 }
