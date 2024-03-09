@@ -1,4 +1,4 @@
-#!groovy
+#!/usr/bin/env groovy
 
 node {
     def jenkinsRoot = "${JENKINS_HOME}/workspace"
@@ -34,24 +34,24 @@ node {
             echo "appVer: ${appVer}"
         }
 
-        // stage('Build') {
-        //     sh "PATH=$PATH:/home/viswar/.yarn/bin; yarn --error"
-        // }
+        stage('Build') {
+            sh "PATH=$PATH:/home/viswar/.yarn/bin; yarn --error"
+        }
 
-        // stage('Package') {
-        //     sh "cd ${jenkinsRoot}; pwd; tar -czf ${WORKSPACE}.tar.gz ${JOB_NAME} "
-        // }
+        stage('Package') {
+            sh "cd ${jenkinsRoot}; pwd; tar -czf ${WORKSPACE}.tar.gz ${JOB_NAME} "
+        }
 
-        // stage('Deploy') {
-        //     sshagent(['ecdsa']) {
-        //         sh 'scp ${WORKSPACE}.tar.gz viswar@sjsapp:/data/tmp '
-        //     }
-        // }
+        stage('Deploy') {
+            sshagent(['ecdsa']) {
+                sh 'scp ${WORKSPACE}.tar.gz viswar@sjsapp:/data/tmp '
+            }
+        }
 
         stage('Archive') {
-                sshagent(['ecdsa']) {
-                    sh "ssh viswar@sjsapp bash /data/scripts/archive.sh ${JOB_NAME} ${appVer} --error"
-                }
+            sshagent(['ecdsa']) {
+                sh "ssh viswar@sjsapp bash /data/scripts/archive.sh ${JOB_NAME} ${appVer} --error"
+            }
         }
 
         stage('Install') {
