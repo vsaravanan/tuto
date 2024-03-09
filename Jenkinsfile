@@ -57,7 +57,7 @@ node {
         stage('Install') {
             withCredentials([string(credentialsId: 'colordust', variable: 'colordust')]) {
                 sshagent(['ecdsa']) {
-                    sh "ssh viswar@sjsapp bash /data/scripts/install.sh ${JOB_NAME} ${colordust} --error"
+                    sh 'ssh viswar@sjsapp bash /data/scripts/install.sh ${JOB_NAME} ${colordust} --error'
                 }
             }
         }
@@ -75,7 +75,7 @@ node {
         echo 'MVS failed'
         body = "FAILED \n job name : ${JOB_NAME} \n Version : ${appVer} \n Jenkins : " +
                 "${BUILD_URL} \n  Commit Message : ${lastCommitMessage} "
-        emailext body: body + error.toString(),
+        emailext body: body,
                 subject: "${appVer} was deployed but FAILED" ,
                 to: 'saravanan.resume@gmail.com',
                 from: 'jenkins'
