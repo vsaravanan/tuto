@@ -65,7 +65,8 @@ node {
 
         stage('Email') {
             echo "MVS job success"
-            body = "SUCCESS job name : ${JOB_NAME} \n Version : ${appVer} \n Jenkins : ${BUILD_URL} \n  Commit Message : ${lastCommitMessage} "
+            body = "SUCCESS job name : ${JOB_NAME} \n Version : ${appVer} \n Jenkins : " +
+                       "${BUILD_URL} \n  Commit Message : ${lastCommitMessage} "
             emailext body: body,
             subject: "${JOB_NAME} was deployed",
             to: 'saravanan.resume@gmail.com',
@@ -73,7 +74,8 @@ node {
         }
     } catch (Exception e) {
             echo "MVS failed"
-            body = "FAILED job name : ${JOB_NAME} \n Version : ${appVer} \n Jenkins : ${BUILD_URL} \n  Commit Message : ${lastCommitMessage} "
+            body = "FAILED job name : ${JOB_NAME} \n Version : ${appVer} \n Jenkins : "
+                        "+${BUILD_URL} \n  Commit Message : ${lastCommitMessage} "
             emailext body: body + e.toString() + ' \n\n ' + error.printStackTrace(),
             subject: "${JOB_NAME} was deployed",
             to: 'saravanan.resume@gmail.com',
