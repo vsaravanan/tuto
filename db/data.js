@@ -71,6 +71,9 @@ card = {
   testpages: [
     { 'get all users': 'https://saravanjs.com:10201/api/v1/users' },
     { 'get single user': 'https://saravanjs.com:10201/api/v1/users/1' },
+    { 'recreate ': 'https://saravanjs.com:10201/api/v1/users/init' },
+    { 'delete single user': 'https://saravanjs.com:10201/api/v1/users/6' },
+    { 'delete all users': 'https://saravanjs.com:10201/api/v1/users' },
     { flux: 'https://saravanjs.com:10201/api/v1/users/flux' },
 
     {
