@@ -20,7 +20,6 @@ card = {
     { database: '/database.html' },
     { realtime: '/realtime.html' },
     { jenkins: 'https://web.saravanjs.com/' },
-    { ngrok: 'https://upward-camel-endlessly.ngrok-free.app/' },
   ],
 }
 data.push(card)
@@ -75,7 +74,8 @@ card = {
     { flux: 'https://saravanjs.com:10201/api/v1/users/flux' },
 
     {
-      postman: 'https://documenter.getpostman.com/view/691160/2s9YeEbBpc',
+      postman:
+        'https://web.postman.co/workspace/SpringReactiveMulti~dcad6705-3e05-4485-8f75-50f928c45db5',
     },
   ],
   sourcecodes: [
