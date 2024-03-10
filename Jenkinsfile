@@ -34,6 +34,13 @@ node {
             echo "appVer: ${appVer}"
         }
 
+        stage('SonarQube') {
+            def scannerHome = tool 'sonar-scanner';
+            withSonarQubeEnv() {
+            sh "${scannerHome}/bin/sonar-scanner"
+            }
+        }        
+
         stage('Build') {
             sh "PATH=$PATH:/home/viswar/.yarn/bin; yarn --error"
         }
