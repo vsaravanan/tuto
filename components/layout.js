@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
   const show_sidebar = showSidebar ? 'sidebar-open' : 'sidebar-close'
 
   let listurl = process.env.NEXT_PUBLIC_listskills
-  let externalurl = process.env.NEXT_PUBLIC_iframe
+  let externalurl = process.env.NEXT_PUBLIC_serverjs
 
   let url = content !== '' ? `${listurl}${content}.htm` : ''
 
