@@ -12,18 +12,35 @@ const Layout = ({ children }) => {
   const { isLoading, error } = useSelector(state => state.posts)
   const statuso = useStatusoStore(state => state.statuso)
 
-  const { content, showSidebar } = useUtilStore(state => {
+  const { content, keyp, showSidebar, selectMenu } = useUtilStore(state => {
     return {
       content: state.content,
+      keyp: state.keyp,
       showSidebar: state.showSidebar,
+      selectMenu: state.selectMenu,
     }
   })
 
   const show_sidebar = showSidebar ? 'sidebar-open' : 'sidebar-close'
 
   let listurl = process.env.NEXT_PUBLIC_listskills
+  let externalurl = process.env.NEXT_PUBLIC_iframe
 
   let url = content !== '' ? `${listurl}${content}.htm` : ''
+
+  const openExternalPage = (title, url) => {
+    let mytitle = encodeURIComponent(title)
+    let myurl = encodeURIComponent(url)
+    selectMenu({ keyp: false })
+    const openNewTab = () => {
+      window.open(`${externalurl}iframe/${mytitle}/${myurl}`, '_blank')
+    }
+    return openNewTab()
+  }
+
+  if (!!keyp) {
+    openExternalPage(content, url)
+  }
 
   return (
     <div>
@@ -49,12 +66,14 @@ const Layout = ({ children }) => {
                     children
                   ) : (
                     <>
-                      {/* {content} */}
                       <iframe
                         id='iframeid'
                         title='tutorials'
                         src={url}
-                        sandbox='allow-same-origin allow-forms allow-scripts allow-popups allow-top-navigation allow-top-navigation-by-user-activation'
+                        style={{ margin: '0', overflow: 'hidden' }}
+                        width='100%'
+                        height='100%'
+                        sandbox='allow-same-origin allow-forms allow-scripts allow-popups allow-top-navigation allow-top-navigation-by-user-activation '
                       ></iframe>
                     </>
                   )}

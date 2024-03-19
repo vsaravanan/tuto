@@ -19,7 +19,8 @@ card = {
     { finance: '/finance.html' },
     { database: '/database.html' },
     { realtime: '/realtime.html' },
-    { jenkins: 'https://web.saravanjs.com/' },
+    { jenkins: 'https://jenkins.saravanjs.com/' },
+    { sonarqube: 'https://sonarqube.saravanjs.com/' },
   ],
 }
 data.push(card)

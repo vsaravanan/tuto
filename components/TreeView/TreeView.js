@@ -6,19 +6,33 @@ const listurl = process.env.NEXT_PUBLIC_listskills
 const TreeNode = ({ id, node }) => {
   node.key = id
   const [isExpanded, setIsExpanded] = useState(false)
-  const { menuSelected, selectMenu, setContent } = useUtilStore(state => {
+  const { menuSelected, keyp, selectMenu, setContent } = useUtilStore(state => {
     return {
       menuSelected: state.menuSelected,
+      keyp: state.keyp,
       selectMenu: state.selectMenu,
       setContent: state.setContent,
     }
   })
 
-  const expandCollapse = () => {
+  const expandCollapse = e => {
+    // console.log(
+    //   'ctrlkey ' +
+    //     e.ctrlKey +
+    //     '  ' +
+    //     node.root +
+    //     '  ' +
+    //     node.children +
+    //     '  ' +
+    //     node.fullPath +
+    //     '  ' +
+    //     node.name,
+    // )
     if (node.children?.length > 0) {
       setIsExpanded(isExpanded => !isExpanded)
     }
-    selectMenu({ nodeitem: node.root, leaf: node.children?.length === 0 })
+
+    selectMenu({ nodeitem: node.root, leaf: node.children?.length === 0, keyp: e.ctrlKey })
   }
 
   const getIconOrBlank = () => {
@@ -71,7 +85,7 @@ const TreeNode = ({ id, node }) => {
     <>
       <div className='tree-node'>
         {/* leaf */}
-        <div onClick={() => expandCollapse()} className={`node-toggle ${expandok}`}>
+        <div onClick={e => expandCollapse(e)} className={`node-toggle ${expandok}`}>
           {leaflink}
         </div>
         {/* else children expanded  */}
