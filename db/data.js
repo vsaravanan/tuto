@@ -19,8 +19,21 @@ card = {
     { finance: '/finance.html' },
     { database: '/database.html' },
     { realtime: '/realtime.html' },
+  ],
+}
+data.push(card)
+//
+
+card = {
+  title: 'Port forwarded in nginx',
+  description: ` `,
+  imgSrc: 'https://picsum.photos/300/200',
+  imgAlt: 'Card Image 0.1',
+  testpages: [
     { jenkins: 'https://jenkins.saravanjs.com/' },
     { sonarqube: 'https://sonarqube.saravanjs.com/' },
+    { tuton: 'https://tuton.saravanjs.com/' },
+    { angular: 'https://angular.saravanjs.com/' },
   ],
 }
 data.push(card)
@@ -111,7 +124,7 @@ card = {
   imgSrc: 'https://picsum.photos/300/200',
   imgAlt: 'Card Image 3',
   swagger: 'http://saravanjs.com:10300/swagger-ui/index.html',
-  testpages: [{ 'loginpage to test': 'https://saravanjs.com:10301/' }],
+  testpages: [{ 'loginpage to test': 'https://tuton.saravanjs.com/' }],
   videos: [{ 'loginpage demo video': 'https://saravanjs.com:10401/loginpage.mp4' }],
 }
 data.push(card)
@@ -125,10 +138,7 @@ card = {
   imgSrc: 'https://picsum.photos/300/200',
   imgAlt: 'Card Image 4',
   github: 'https://github.com/vsaravanan/angular-shopping-cart',
-  testpages: [
-    { 'angular shopping cart': 'https://saravanjs.com:10501/' },
-    { 'angular shopping cart 2': 'https://angular.saravanjs.com/' },
-  ],
+  testpages: [{ 'angular shopping cart': 'https://angular.saravanjs.com/' }],
   sourcecodes: [
     {
       'app.module.ts':
