@@ -66,14 +66,15 @@ const Layout = ({ children }) => {
                     children
                   ) : (
                     <>
+                      {/* {content} */}
                       <iframe
                         id='iframeid'
                         title='tutorials'
                         src={url}
-                        style={{ margin: '0', overflow: 'hidden' }}
-                        width='100%'
-                        height='100%'
-                        sandbox='allow-same-origin allow-forms allow-scripts allow-popups allow-top-navigation allow-top-navigation-by-user-activation '
+                        // style={{ margin: '0', overflow: 'hidden' }}
+                        // width='100%'
+                        // height='100%'
+                        sandbox='allow-same-origin allow-forms allow-scripts allow-popups allow-top-navigation allow-top-navigation-by-user-activation'
                       ></iframe>
                     </>
                   )}
