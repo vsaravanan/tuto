@@ -125,7 +125,10 @@ card = {
   imgSrc: 'https://picsum.photos/300/200',
   imgAlt: 'Card Image 4',
   github: 'https://github.com/vsaravanan/angular-shopping-cart',
-  testpages: [{ 'angular shopping cart': 'https://saravanjs.com:10501/' }],
+  testpages: [
+    { 'angular shopping cart': 'https://saravanjs.com:10501/' },
+    { 'angular shopping cart 2': 'https://angular.saravanjs.com/' },
+  ],
   sourcecodes: [
     {
       'app.module.ts':
