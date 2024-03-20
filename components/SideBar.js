@@ -31,7 +31,7 @@ function addItemToHierarchy(nodes, parts, rootid, parentPath) {
 }
 
 export const Sidebar = () => {
-  const url = process.env.NEXT_PUBLIC_statichtmls
+  const url = process.env.NEXT_PUBLIC_serverjs + 'statichtmls'
   const { data: menus, isLoading, isError, error } = useSWR(url, fetcher)
 
   if (menus) {
