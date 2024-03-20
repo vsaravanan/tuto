@@ -17,6 +17,10 @@ node {
             echo "BUILD_URL : ${BUILD_URL}"
             echo "JENKINS_HOME : ${JENKINS_HOME}"
             echo "WORKSPACE : ${WORKSPACE}"
+            echo "test page 1 : https://saravanjs.com/ "
+            echo "test page 2 : https://jenkins.saravanjs.com/ "
+            echo "test page 3 : https://sonarqube.saravanjs.com/ "
+            
         }
 
         stage('Checkout') {
