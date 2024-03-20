@@ -20,6 +20,7 @@ node {
             echo "test page 1 : https://saravanjs.com/ "
             echo "test page 2 : https://jenkins.saravanjs.com/ "
             echo "test page 3 : https://sonarqube.saravanjs.com/ "
+            echo "test page 4 : https://angular.saravanjs.com/ "
             
         }
 
