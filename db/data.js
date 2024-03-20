@@ -166,11 +166,6 @@ data.push(card)
 //
 
 card = {
-  testpages: [{ 'Rest vs Message': 'https://saravanjs.com:8001/microservices/restVsMessage.pdf' }],
-}
-data.push(card)
-
-card = {
   title: 'Codility questions',
 
   testpages: [
@@ -410,5 +405,10 @@ data.push(card)
 //       'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/aaaaaa.js',
 //   },
 // },
+
+card = {
+  testpages: [{ 'Rest vs Message': 'https://saravanjs.com:8001/microservices/restVsMessage.pdf' }],
+}
+data.push(card)
 
 export default data
