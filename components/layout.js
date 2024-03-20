@@ -5,7 +5,7 @@ import ErrorComponent from 'components/ErrorComponent'
 import Header from 'components/header'
 import Footer from 'components/footer'
 import useStatusoStore, { cError, cFinished, cIdle, cLayout, cProgress } from '@/redux/statusoSlice'
-import { Sidebar } from 'components/SideBar'
+import { Sidebar } from 'components/Sidebar'
 import useUtilStore from '@/redux/utilSlice'
 
 const Layout = ({ children }) => {
@@ -66,15 +66,14 @@ const Layout = ({ children }) => {
                     children
                   ) : (
                     <>
-                      {/* {content} */}
                       <iframe
                         id='iframeid'
-                        title='tutorials'
+                        title={content}
                         src={url}
-                        // style={{ margin: '0', overflow: 'hidden' }}
-                        // width='100%'
-                        // height='100%'
-                        sandbox='allow-same-origin allow-forms allow-scripts allow-popups allow-top-navigation allow-top-navigation-by-user-activation'
+                        style={{ margin: '0', overflow: 'hidden' }}
+                        width='100%'
+                        height='100%'
+                        // sandbox='allow-same-origin allow-forms allow-scripts allow-popups allow-top-navigation allow-top-navigation-by-user-activation'
                       ></iframe>
                     </>
                   )}
