@@ -2,16 +2,20 @@ const findOddElement = arr => {
   let k = 1
   let prevElement = arr.pop()
 
+  const oddElements = []
+
   while (arr.length > 0) {
     const currentElement = arr.pop()
 
-    console.log(`Current Element: ${currentElement}, Previous Element: ${prevElement}, k: ${k}`)
+    console.log(
+      `Current Element: ${currentElement}, Previous Element: ${prevElement}, k: ${k}, odds : ${oddElements} `,
+    )
 
     if (currentElement === prevElement) {
       k = k === 0 ? 1 : 0
     } else {
       if (k === 1) {
-        break // Odd occurrence found, exit the loop
+        oddElements.push(prevElement)
       } else {
         k = 1
       }
@@ -20,10 +24,12 @@ const findOddElement = arr => {
     prevElement = currentElement
   }
 
-  console.log(
-    k === 1 ? `Odd occurrence found: ${prevElement}` : `No odd occurrence found, returning -1`,
-  )
-  return k === 1 ? prevElement : -1
+  if (k === 1) {
+    oddElements.push(prevElement)
+    console.log(` Previous Element: ${prevElement}, k: ${k}, odds : ${oddElements} `)
+  }
+
+  return oddElements
 }
 
 export const odd_occurrences = A => {
