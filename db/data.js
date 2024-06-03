@@ -229,7 +229,7 @@ card = {
   coderun: [
     {
       'odd_occurrences': {
-        commands: ['', 'odd_occurrences([9, 3, 9, 3, 9, 7, 9])'],
+        commands: ['', 'odd_occurrences([9, 3, 9, 5, 3, 9, 7, 9])'],
         filePath:
           'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/odd_occurrences.js',
       },
