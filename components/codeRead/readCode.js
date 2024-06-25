@@ -9,6 +9,7 @@ const ReadCode = ({ filePath }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // console.log(filePath)
         const response = await fetch(filePath)
         const data = await response.text()
         setCode(data)
@@ -20,11 +21,7 @@ const ReadCode = ({ filePath }) => {
     fetchData()
   }, [filePath, setCode])
 
-  return (
-    // <div>abc</div>
-
-    <CodeHighlighter code={code} />
-  )
+  return <CodeHighlighter code={code} />
 }
 
 export default ReadCode

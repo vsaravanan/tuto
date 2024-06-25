@@ -1,12 +1,15 @@
 // components/layout.js
+import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import LoadingSpinner from 'components/LoadingSpinner'
 import ErrorComponent from 'components/ErrorComponent'
 import Header from 'components/header'
 import Footer from 'components/footer'
 import useStatusoStore, { cError, cFinished, cIdle, cLayout, cProgress } from '@/redux/statusoSlice'
+import CodePublisher from 'components/codeRead/codePublisher'
 import { Sidebar } from 'components/Sidebar'
 import useUtilStore from '@/redux/utilSlice'
+import Link from 'next/link'
 
 const Layout = ({ children }) => {
   const { isLoading, error } = useSelector(state => state.posts)
@@ -28,12 +31,16 @@ const Layout = ({ children }) => {
 
   let url = content !== '' ? `${listurl}${content}.htm` : ''
 
+  let angular = content.startsWith('angularjs/angularjs1')
+  // console.log(content + '  ' + angular)
+
   const openExternalPage = (title, url) => {
     let mytitle = encodeURIComponent(title)
     let myurl = encodeURIComponent(url)
-    selectMenu({ keyp: false })
+    // selectMenu({ keyp: false })
+    let iframecontainer = !!angular ? 'iframew' : 'iframe'
     const openNewTab = () => {
-      window.open(`${externalurl}iframe/${mytitle}/${myurl}`, '_blank')
+      window.open(`${externalurl}${iframecontainer}/${mytitle}/${myurl}`, '_blank')
     }
     return openNewTab()
   }
@@ -41,6 +48,15 @@ const Layout = ({ children }) => {
   if (!!keyp) {
     openExternalPage(content, url)
   }
+  let angularurl = `${listurl}${content}.txt`
+  angularurl = angularurl.replace(`${listurl}angularjs/angularjs1`, `${listurl}hidden`)
+  // console.log(angularurl)
+
+  useEffect(() => {
+    if (!!keyp) {
+      selectMenu({ keyp: false })
+    }
+  }, [keyp])
 
   return (
     <div>
@@ -70,11 +86,31 @@ const Layout = ({ children }) => {
                         id='iframeid'
                         title={content}
                         src={url}
-                        style={{ margin: '0', overflow: 'hidden' }}
+                        className={!!angular ? 'iframew vh30' : ''}
+                        // style={{
+                        //   // ...(!!angular && { backgroundColor: '#FFFFFF' }),
+                        //   margin: '0',
+                        //   overflow: 'hidden',
+                        // }}
                         width='100%'
                         height='100%'
                         // sandbox='allow-same-origin allow-forms allow-scripts allow-popups allow-top-navigation allow-top-navigation-by-user-activation'
                       ></iframe>
+                      {!angular ? (
+                        ''
+                      ) : (
+                        <div>
+                          <Link
+                            className='link2'
+                            href={angularurl}
+                            rel='noopener noreferrer'
+                            target='_blank'
+                          >
+                            {angularurl}
+                          </Link>
+                          <CodePublisher filePath={angularurl} />
+                        </div>
+                      )}
                     </>
                   )}
                 </main>

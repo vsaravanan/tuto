@@ -68,7 +68,6 @@
     transition: color 0.3s ease;
     font-weight: bold;
     text-decoration-line: underline;
-   
 }
 
 
@@ -79,5 +78,24 @@
 
 
 .link:active {
+    color: rgb(24, 145, 56);
+}
+
+.link2 {
+    color: #96c8f4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: bold;
+    text-decoration-line: underline;
+}
+
+
+.link2:hover {
+    color: rgb(83, 140, 147);
+    font-size: 1.15em; 
+}
+
+
+.link2:active {
     color: rgb(24, 145, 56);
 }
