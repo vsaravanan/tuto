@@ -413,7 +413,7 @@ card = {
     Zustand was used instead of ReduxToolkit 
       `,
   imgSrc: 'https://picsum.photos/300/200',
-  imgAlt: 'Card Image ',
+  imgAlt: 'Card Image',
   github: 'https://github.com/vsaravanan/NextJsShoppingCart',
   testpages: [{ 'nextjs shopping cart': 'https://nextjs.saravanjs.com/' }],
   sourcecodes: [
