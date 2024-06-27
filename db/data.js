@@ -407,6 +407,42 @@ data.push(card)
 // },
 
 card = {
+  title: 'Shopping cart in Next.Js',
+  description: `
+    Next.Js was used instead of React.Js
+    Zustand was used instead of ReduxToolkit 
+      `,
+  imgSrc: 'https://picsum.photos/300/200',
+  imgAlt: 'Card Image ',
+  github: 'https://github.com/vsaravanan/NextJsShoppingCart',
+  testpages: [{ 'nextjs shopping cart': 'https://nextjs.saravanjs.com/' }],
+  sourcecodes: [
+    {
+      'useCartStore.js':
+        'https://raw.githubusercontent.com/vsaravanan/NextJsShoppingCart/main/redux/useCartStore.js',
+    },
+    {
+      '_app.js':
+        'https://raw.githubusercontent.com/vsaravanan/NextJsShoppingCart/main/pages/_app.js',
+    },
+    {
+      'cart.js':
+        'https://raw.githubusercontent.com/vsaravanan/NextJsShoppingCart/main/pages/cart.js',
+    },
+    {
+      'ProductCard.js':
+        'https://raw.githubusercontent.com/vsaravanan/NextJsShoppingCart/main/components/ProductCard.js',
+    },
+    {
+      'Navbar.js':
+        'https://raw.githubusercontent.com/vsaravanan/NextJsShoppingCart/main/components/Navbar.js',
+    },
+  ],
+}
+data.push(card)
+//
+
+card = {
   testpages: [{ 'Rest vs Message': 'https://saravanjs.com:8001/microservices/restVsMessage.pdf' }],
 }
 data.push(card)
