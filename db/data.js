@@ -407,7 +407,23 @@ data.push(card)
 // },
 
 card = {
-  title: 'Shopping cart in Next.Js',
+  title: 'Uniqlo Shopping cart in Next.Js',
+  description: `
+    Next.js, Redux Toolkit, Chakra UI
+    emotion, framer, fakestoreapi, 
+    createAsyncThunk, DarkAndLight Theme
+    This is eye-catching
+      `,
+  imgSrc: 'https://picsum.photos/300/200',
+  imgAlt: 'Card Image',
+  github: 'https://github.com/vsaravanan/uniqlo-shop',
+  testpages: [{ 'nextjs shopping cart': 'https://nextjs.saravanjs.com/' }],
+}
+data.push(card)
+//
+
+card = {
+  title: 'Normal Shopping cart',
   description: `
     Next.Js was used instead of React.Js
     Zustand was used instead of ReduxToolkit 
@@ -415,7 +431,7 @@ card = {
   imgSrc: 'https://picsum.photos/300/200',
   imgAlt: 'Card Image',
   github: 'https://github.com/vsaravanan/NextJsShoppingCart',
-  testpages: [{ 'nextjs shopping cart': 'https://nextjs.saravanjs.com/' }],
+  testpages: [{ 'nextjs shopping cart': 'https://nextjs.saravanjs.com:10700/' }],
   sourcecodes: [
     {
       'useCartStore.js':
