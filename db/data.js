@@ -110,6 +110,58 @@ data.push(card)
 //
 
 card = {
+  title: 'Uniqlo Shopping cart in Next.Js',
+  description: `
+    Next.js, Redux Toolkit, Chakra UI
+    emotion, framer, fakestoreapi, 
+    createAsyncThunk, DarkAndLight Theme
+    This is eye-catching
+      `,
+  imgSrc: 'https://picsum.photos/300/200',
+  imgAlt: 'Card Image',
+  github: 'https://github.com/vsaravanan/uniqlo-shop',
+  testpages: [{ 'nextjs shopping cart': 'https://nextjs.saravanjs.com/' }],
+}
+data.push(card)
+//
+
+card = {
+  title: 'Normal Shopping cart',
+  description: `
+    Next.Js was used instead of React.Js
+    Zustand was used instead of ReduxToolkit 
+      `,
+  imgSrc: 'https://picsum.photos/300/200',
+  imgAlt: 'Card Image',
+  github: 'https://github.com/vsaravanan/NextJsShoppingCart',
+  testpages: [{ 'nextjs shopping cart': 'https://nextjs.saravanjs.com:10700/' }],
+  sourcecodes: [
+    {
+      'useCartStore.js':
+        'https://raw.githubusercontent.com/vsaravanan/NextJsShoppingCart/main/redux/useCartStore.js',
+    },
+    {
+      '_app.js':
+        'https://raw.githubusercontent.com/vsaravanan/NextJsShoppingCart/main/pages/_app.js',
+    },
+    {
+      'cart.js':
+        'https://raw.githubusercontent.com/vsaravanan/NextJsShoppingCart/main/pages/cart.js',
+    },
+    {
+      'ProductCard.js':
+        'https://raw.githubusercontent.com/vsaravanan/NextJsShoppingCart/main/components/ProductCard.js',
+    },
+    {
+      'Navbar.js':
+        'https://raw.githubusercontent.com/vsaravanan/NextJsShoppingCart/main/components/Navbar.js',
+    },
+  ],
+}
+data.push(card)
+//
+
+card = {
   title: 'Login and Spring Security',
   description: `Discuss with me for the source code and demo
       * Java 21, Spring Security, ReactJs, Redux
@@ -405,58 +457,6 @@ data.push(card)
 //       'https://raw.githubusercontent.com/vsaravanan/tuto/master/components/codility/aaaaaa.js',
 //   },
 // },
-
-card = {
-  title: 'Uniqlo Shopping cart in Next.Js',
-  description: `
-    Next.js, Redux Toolkit, Chakra UI
-    emotion, framer, fakestoreapi, 
-    createAsyncThunk, DarkAndLight Theme
-    This is eye-catching
-      `,
-  imgSrc: 'https://picsum.photos/300/200',
-  imgAlt: 'Card Image',
-  github: 'https://github.com/vsaravanan/uniqlo-shop',
-  testpages: [{ 'nextjs shopping cart': 'https://nextjs.saravanjs.com/' }],
-}
-data.push(card)
-//
-
-card = {
-  title: 'Normal Shopping cart',
-  description: `
-    Next.Js was used instead of React.Js
-    Zustand was used instead of ReduxToolkit 
-      `,
-  imgSrc: 'https://picsum.photos/300/200',
-  imgAlt: 'Card Image',
-  github: 'https://github.com/vsaravanan/NextJsShoppingCart',
-  testpages: [{ 'nextjs shopping cart': 'https://nextjs.saravanjs.com:10700/' }],
-  sourcecodes: [
-    {
-      'useCartStore.js':
-        'https://raw.githubusercontent.com/vsaravanan/NextJsShoppingCart/main/redux/useCartStore.js',
-    },
-    {
-      '_app.js':
-        'https://raw.githubusercontent.com/vsaravanan/NextJsShoppingCart/main/pages/_app.js',
-    },
-    {
-      'cart.js':
-        'https://raw.githubusercontent.com/vsaravanan/NextJsShoppingCart/main/pages/cart.js',
-    },
-    {
-      'ProductCard.js':
-        'https://raw.githubusercontent.com/vsaravanan/NextJsShoppingCart/main/components/ProductCard.js',
-    },
-    {
-      'Navbar.js':
-        'https://raw.githubusercontent.com/vsaravanan/NextJsShoppingCart/main/components/Navbar.js',
-    },
-  ],
-}
-data.push(card)
-//
 
 card = {
   testpages: [{ 'Rest vs Message': 'https://saravanjs.com:8001/microservices/restVsMessage.pdf' }],
