@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FaHome, FaGithub, FaYoutube } from 'react-icons/fa'
 import { FcManager } from 'react-icons/fc'
+import ClientDetails from '/components/client'
 // components/Header.js
 const Header = () => {
   const { content, showSidebar, toggleSidebar } = useUtilStore(state => {
@@ -55,7 +56,11 @@ const Header = () => {
                 </Link>
               ))}
           </div>
+
           <div className='flex flex-row justify-center sm:justify-evenly align-middle gap-4 text-white text-4xl lg:text-5xl'>
+            <div className='text-blue-400 text-sm lg:text-base'>
+              <ClientDetails />
+            </div>
             <Link className='text-white/90 hover:text-white' href='/' as='/'>
               <span
                 onClick={() => {
