@@ -3,7 +3,7 @@ import axios from 'axios'
 import FingerprintJS from '@fingerprintjs/fingerprintjs'
 import { Tooltip } from 'react-tooltip'
 
-const ClientDetails = () => {
+const ClientDetailsHead = () => {
   const [ipAddress, setIpAddress] = useState('')
   const [deviceFingerprint, setDeviceFingerprint] = useState('')
 
@@ -47,4 +47,4 @@ const ClientDetails = () => {
   )
 }
 
-export default ClientDetails
+export default ClientDetailsHead

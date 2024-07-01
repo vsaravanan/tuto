@@ -1,9 +1,17 @@
 import CodePublisher from '@/components/codeRead/codePublisher'
 
-const Another = () => {
+export const getStaticProps = async () => {
+  return {
+    props: {
+      a: 'abcfe',
+    },
+  }
+}
+
+const Another = ({ a }) => {
   return (
     <div>
-      <CodePublisher />
+      bb {a} {/* <CodePublisher /> */}
     </div>
   )
 }
