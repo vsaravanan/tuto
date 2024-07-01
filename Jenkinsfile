@@ -9,7 +9,8 @@ node {
     try {
         stage('Clean') {
             sh 'pwd'
-            sh 'rm -rf *'
+            sh 'rm -rf * '
+
         }
 
         stage('Environment') {
