@@ -121,7 +121,7 @@ card = {
   imgSrc: 'https://picsum.photos/300/200',
   imgAlt: 'Card Image',
   github: 'https://github.com/vsaravanan/uniqlo-shop',
-  testpages: [{ 'nextjs shopping cart': 'https://nextjs.saravanjs.com/' }],
+  testpages: [{ 'uniqlo nextjs shopping cart': 'https://nextjs.saravanjs.com/' }],
 }
 data.push(card)
 //
@@ -135,7 +135,7 @@ card = {
   imgSrc: 'https://picsum.photos/300/200',
   imgAlt: 'Card Image',
   github: 'https://github.com/vsaravanan/NextJsShoppingCart',
-  testpages: [{ 'nextjs shopping cart': 'https://nextjs.saravanjs.com:10701/' }],
+  testpages: [{ 'vcd nextjs shopping cart': 'https://nextjs.saravanjs.com:10701/' }],
   sourcecodes: [
     {
       'useCartStore.js':
