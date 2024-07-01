@@ -116,6 +116,7 @@ card = {
     emotion, framer, fakestoreapi, 
     createAsyncThunk, DarkAndLight Theme
     This is eye-catching
+    
       `,
   imgSrc: 'https://picsum.photos/300/200',
   imgAlt: 'Card Image',
@@ -126,7 +127,7 @@ data.push(card)
 //
 
 card = {
-  title: 'Normal Shopping cart',
+  title: 'VCD Shopping cart',
   description: `
     Next.Js was used instead of React.Js
     Zustand was used instead of ReduxToolkit 
@@ -134,7 +135,7 @@ card = {
   imgSrc: 'https://picsum.photos/300/200',
   imgAlt: 'Card Image',
   github: 'https://github.com/vsaravanan/NextJsShoppingCart',
-  testpages: [{ 'nextjs shopping cart': 'https://nextjs.saravanjs.com:10700/' }],
+  testpages: [{ 'nextjs shopping cart': 'https://nextjs.saravanjs.com:10701/' }],
   sourcecodes: [
     {
       'useCartStore.js':
