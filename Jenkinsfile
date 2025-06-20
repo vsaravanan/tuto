@@ -59,7 +59,7 @@ node {
         }        
 
         stage('Build') {
-            sh "PATH=$PATH:/home/viswar/.yarn/bin; yarn --error"
+            sh "PATH=$PATH:/home/viswar/.yarn/bin; yarn --non-interactive --error"
         }
 
         stage('Package') {
