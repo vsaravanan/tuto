@@ -7,6 +7,7 @@ export const max_product_three = (A = data_max_product_three) => {
     console.log(s)
     let l = s.length
     let max1 = s[l - 1] * s[l - 2] * s[l - 3]
+    // product of first 2 (smallest, possibly negative) and last (largest)
     let max2 = s[0] * s[1] * s[l - 1]
     result = Math.max(max1, max2)
     console.log(max1, max2, result)
