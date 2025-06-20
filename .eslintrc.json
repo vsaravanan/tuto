@@ -3,12 +3,13 @@
     "react-app",
     "eslint:recommended",
     "plugin:flowtype/recommended",
+    "plugin:react/recommended",
     "prettier",
     "next/core-web-vitals"
   ],
   "plugins":  ["html", "standard", "prettier", "react", "import", "flowtype"],
   "parserOptions": {
-    "ecmaVersion": 2020,
+    "ecmaVersion": 2024,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true

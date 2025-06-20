@@ -5,7 +5,7 @@ import postsReducer from '@/redux/postSlice'
 // import utilReducer from '@/redux/utilSlice'
 import { apiPosts } from '@/features/api/apiPosts' // Import the postsApi object
 
-import thunk from 'redux-thunk'
+// import { thunk } from 'redux-thunk';
 import logger from 'redux-logger'
 
 const environment = process.env.NEXT_PUBLIC_NODE_ENV
@@ -24,7 +24,7 @@ export const store = configureStore(
     middleware: getDefaultMiddleware => {
       let tmpMiddleware = getDefaultMiddleware({
         serializableCheck: false,
-      }).concat(thunk)
+      })   //.concat(thunk)
       // .concat(apiPosts.middleware)
       if (environment === 'development') {
         tmpMiddleware = tmpMiddleware.concat(logger)

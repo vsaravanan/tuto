@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "jsx": "react-jsx", // or "react" or "preserve" depending on setup
+    "module": "esnext",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
