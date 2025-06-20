@@ -1,4 +1,4 @@
-#!/usr/bin/env  groovy
+#!/usr/bin/env groovy
 
 node {
     def jenkinsRoot = "${JENKINS_HOME}/workspace"
@@ -59,7 +59,7 @@ node {
         }        
 
         stage('Build') {
-            sh "PATH=$PATH:/home/viswar/.yarn/bin; yarn --non-interactive --error"
+            sh "PATH=$PATH:/home/viswar/.yarn/bin; yarn --error"
         }
 
         stage('Package') {
