@@ -47,6 +47,7 @@ const Layout = ({ children }) => {
 
   if (!!keyp) {
     openExternalPage(content, url)
+    return
   }
   let angularurl = `${listurl}${content}.htm.txt`
   angularurl = angularurl.replace(`${listurl}angularjs/angularjs1`, `${listurl}hidden`)
