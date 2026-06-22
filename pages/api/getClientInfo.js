@@ -22,7 +22,7 @@ export default async (req, res) => {
     // Fetch IP address
 
     const ipResponse = await axios.get('https://api.ipify.org?format=json')
-    const ipAddress = await ipResponse.data.ip
+    const ipAddress = await ipResponse.ip
     const fingerprint = generateFingerprint(req)
 
     // Generate fingerprint
