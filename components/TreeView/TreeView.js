@@ -86,10 +86,10 @@ const TreeNode = ({ id, node }) => {
     }
   }, [keyp])
 
-  console.log(
-    node.root + '.' + node.name + ', ' + menuSelected + ', ' + node.children.length,
-    ', ' + isExpanded + ', ' + expandok,
-  )
+  // console.log(
+  //   node.root + '.' + node.name + ', ' + menuSelected + ', ' + node.children.length,
+  //   ', ' + isExpanded + ', ' + expandok,
+  // )
 
   return (
     <>
