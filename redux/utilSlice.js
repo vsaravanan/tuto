@@ -2,7 +2,7 @@ import { create } from 'zustand'
 
 const useUtilStore = create(set => ({
   content: '',
-  keyp: '',
+  keyp: 'f',
   showSidebar: true,
   menuSelected: '',
   setContent: content => set({ content }),
@@ -13,7 +13,7 @@ const useUtilStore = create(set => ({
   selectMenu: payload => {
     set(state => ({
       menuSelected: payload.nodeitem,
-      showSidebar: payload.leaf ? false : state.showSidebar,
+      showSidebar: payload.leaf ? false || payload.keyp !== 'f' : state.showSidebar,
       keyp: payload.keyp,
     }))
   },

@@ -1,5 +1,5 @@
 import useUtilStore from '@/redux/utilSlice'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const listurl = process.env.NEXT_PUBLIC_listskills
 
@@ -32,7 +32,11 @@ const TreeNode = ({ id, node }) => {
       setIsExpanded(isExpanded => !isExpanded)
     }
 
-    selectMenu({ nodeitem: node.root, leaf: node.children?.length === 0, keyp: e.ctrlKey })
+    selectMenu({
+      nodeitem: node.root,
+      leaf: node.children?.length === 0,
+      keyp: e.ctrlKey ? 'c' : 'f',
+    })
   }
 
   const getIconOrBlank = () => {
@@ -70,16 +74,22 @@ const TreeNode = ({ id, node }) => {
   let expandok = ''
   if (node.root === menuSelected) {
     expandok = isExpanded ? 'expanded' : ''
-  } else {
-    if (isExpanded) {
-      setIsExpanded(isExpanded => false)
-    }
+    // } else {
+    //   if (isExpanded) {
+    //     setIsExpanded(isExpanded => false)
+    //   }
   }
 
-  // console.log(
-  //   node.root + '.' + node.name + ', ' + menuSelected + ', ' + node.children.length,
-  //   ', ' + isExpanded + ', ' + expandok,
-  // )
+  useEffect(() => {
+    if (keyp === 'c') {
+      selectMenu({ keyp: 'o' })
+    }
+  }, [keyp])
+
+  console.log(
+    node.root + '.' + node.name + ', ' + menuSelected + ', ' + node.children.length,
+    ', ' + isExpanded + ', ' + expandok,
+  )
 
   return (
     <>

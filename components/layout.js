@@ -24,8 +24,6 @@ const Layout = ({ children }) => {
     }
   })
 
-  const show_sidebar = showSidebar ? 'sidebar-open' : 'sidebar-close'
-
   let listurl = process.env.NEXT_PUBLIC_listskills
   let externalurl = process.env.NEXT_PUBLIC_serverjs
 
@@ -37,7 +35,6 @@ const Layout = ({ children }) => {
   const openExternalPage = (title, url) => {
     let mytitle = encodeURIComponent(title)
     let myurl = encodeURIComponent(url)
-    // selectMenu({ keyp: false })
     let iframecontainer = !!angular ? 'iframew' : 'iframe'
     const openNewTab = () => {
       window.open(`${externalurl}${iframecontainer}/${mytitle}/${myurl}`, '_blank')
@@ -45,25 +42,23 @@ const Layout = ({ children }) => {
     return openNewTab()
   }
 
-  if (!!keyp) {
-    openExternalPage(content, url)
-    return
-  }
   let angularurl = `${listurl}${content}.htm.txt`
   angularurl = angularurl.replace(`${listurl}angularjs/angularjs1`, `${listurl}hidden`)
   // console.log(angularurl)
 
   useEffect(() => {
-    if (!!keyp) {
-      selectMenu({ keyp: false })
+    if (keyp === 'c') {
+      openExternalPage(content, url)
     }
   }, [keyp])
+
+  const show_sidebar = showSidebar ? 'sidebar-open' : 'sidebar-close'
 
   return (
     <div>
       <Header />
       <div className='h-screen flex flex-row justify-start'>
-        <aside id='mySidebar' className={` ${show_sidebar} `}>
+        <aside id='mySidebar' className={` ${show_sidebar}`}>
           <Sidebar />
         </aside>
         <article id='myArticle' className='bg-primary flex-1 p-4 text-white'>
