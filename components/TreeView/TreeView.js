@@ -6,14 +6,11 @@ const listurl = process.env.NEXT_PUBLIC_listskills
 const TreeNode = ({ id, node }) => {
   node.key = id
   const [isExpanded, setIsExpanded] = useState(false)
-  const { menuSelected, keyp, selectMenu, setContent } = useUtilStore(state => {
-    return {
-      menuSelected: state.menuSelected,
-      keyp: state.keyp,
-      selectMenu: state.selectMenu,
-      setContent: state.setContent,
-    }
-  })
+
+  const menuSelected = useUtilStore(state => state.menuSelected)
+  const keyp = useUtilStore(state => state.keyp)
+  const selectMenu = useUtilStore(state => state.selectMenu)
+  const setContent = useUtilStore(state => state.setContent)
 
   const expandCollapse = e => {
     // console.log(

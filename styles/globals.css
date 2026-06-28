@@ -1,7 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import '@/components/TreeView/TreeView.module.css' screen; 
+@import "tailwindcss";
+@import '../components/TreeView/TreeView.module.css' screen; 
 
 :root {
   --foreground-rgb: 0, 0, 0;

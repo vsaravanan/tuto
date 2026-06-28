@@ -7,13 +7,9 @@ import ClientDetailsHead from './ClientDetailsHead'
 
 // components/Header.js
 const Header = () => {
-  const { content, showSidebar, toggleSidebar } = useUtilStore(state => {
-    return {
-      content: state.content,
-      showSidebar: state.showSidebar,
-      toggleSidebar: state.toggleSidebar,
-    }
-  })
+  const content = useUtilStore(state => state.content)
+  const showSidebar = useUtilStore(state => state.showSidebar)
+  const toggleSidebar = useUtilStore(state => state.toggleSidebar)
 
   const show_click = !showSidebar ? (
     <>

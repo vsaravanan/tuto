@@ -15,14 +15,10 @@ const Layout = ({ children }) => {
   const { isLoading, error } = useSelector(state => state.posts)
   const statuso = useStatusoStore(state => state.statuso)
 
-  const { content, keyp, showSidebar, selectMenu } = useUtilStore(state => {
-    return {
-      content: state.content,
-      keyp: state.keyp,
-      showSidebar: state.showSidebar,
-      selectMenu: state.selectMenu,
-    }
-  })
+  const content = useUtilStore(state => state.content)
+  const keyp = useUtilStore(state => state.keyp)
+  const showSidebar = useUtilStore(state => state.showSidebar)
+  // const selectMenu = useUtilStore(state => state.selectMenu)
 
   let listurl = process.env.NEXT_PUBLIC_listskills
   let externalurl = process.env.NEXT_PUBLIC_serverjs
