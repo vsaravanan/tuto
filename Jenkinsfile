@@ -69,7 +69,14 @@ node {
         }
 
         stage('Package') {
-            sh "cd ${jenkinsRoot}; pwd; tar -czf ${WORKSPACE}.tar.gz ${JOB_NAME} "
+            sh '''
+                 cd ${jenkinsRoot}; pwd; 
+                    tar -czf ${WORKSPACE}.tar.gz \
+                    .next \
+                    public \
+                    package.json \
+                    next.config.js  ${JOB_NAME} 
+            '''
         }
 
         stage('Deploy') {
