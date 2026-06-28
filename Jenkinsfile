@@ -75,7 +75,7 @@ node {
 
         stage('Package') {
             sh '''
-                 cd ${jenkinsRoot}; pwd; 
+                 cd ${WORKSPACE}; pwd; 
                     tar -czf ${WORKSPACE}.tar.gz \
                     .next \
                     public \
