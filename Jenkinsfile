@@ -67,7 +67,8 @@ node {
 
 
             sh '''  PATH=/home/${USER}/.nvm/versions/node/v26.4.0/bin:/home/${USER}/.local/share/pnpm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin;
-                JAVA_HOME="/usr/lib/jvm/jdk"  pnpm build  
+                JAVA_HOME="/usr/lib/jvm/jdk"  pnpm build
+                pnpm approve-builds  
                 java -version
             '''
 
