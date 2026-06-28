@@ -80,7 +80,7 @@ node {
                     .next \
                     public \
                     package.json \
-                    next.config.js  ${JOB_NAME} 
+                    next.config.js  
             '''
         }
 
