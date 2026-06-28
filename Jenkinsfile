@@ -77,7 +77,7 @@ node {
             sh '''
                  cd ${WORKSPACE}; pwd; 
                     mkdir ${JOB_NAME};
-                    cp -rp .next public package.json next.config.js ${JOB_NAME};
+                    cp -rp .npmrc .next public package.json next.config.js ${JOB_NAME};
                     tar -czf ${WORKSPACE}.tar.gz ${JOB_NAME};
             '''
         }
