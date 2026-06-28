@@ -62,7 +62,7 @@ node {
             // sh "PATH=$PATH:/home/viswar/.yarn/bin; yarn --non-interactive --error"
 
             sh '''  PATH=/home/viswar/.nvm/versions/node/v26.4.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin;
-                JAVA_HOME="/usr/lib/jvm/jdk"  yarn --non-interactive --error 
+                JAVA_HOME="/usr/lib/jvm/jdk"  pnpm dev --non-interactive --error 
                 java -version
             '''
 
