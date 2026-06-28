@@ -76,11 +76,9 @@ node {
         stage('Package') {
             sh '''
                  cd ${WORKSPACE}; pwd; 
-                    tar -czf ${WORKSPACE}.tar.gz \
-                    .next \
-                    public \
-                    package.json \
-                    next.config.js  
+                    mkdir ${JOB_NAME};
+                    cp .next public package.json next.config.js ${JOB_NAME};
+                    tar -czf ${WORKSPACE}.tar.gz ${JOB_NAME};
             '''
         }
 
