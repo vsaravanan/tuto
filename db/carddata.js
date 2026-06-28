@@ -1,3 +1,5 @@
+'use server'
+
 const carddata = []
 let card = {}
 
@@ -460,7 +462,7 @@ carddata.push(card)
 // },
 
 card = {
-  testpages: [{ 'Rest vs Message': 'https://web.saravanjs.com/microservices/restVsMessage.pdf' }],
+  testpages: [{ 'Rest vs Message': 'https://www.saravanjs.com/microservices/restVsMessage.pdf' }],
 }
 carddata.push(card)
 
