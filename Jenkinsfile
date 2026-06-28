@@ -59,7 +59,13 @@ node {
         }        
 
         stage('Build') {
-            sh "PATH=$PATH:/home/viswar/.yarn/bin; yarn --non-interactive --error"
+            // sh "PATH=$PATH:/home/viswar/.yarn/bin; yarn --non-interactive --error"
+
+            sh '''  PATH=/home/viswar/.nvm/versions/node/v26.4.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin;
+                JAVA_HOME="/usr/lib/jvm/jdk"  yarn --non-interactive --error 
+                java -version
+            '''
+
         }
 
         stage('Package') {
