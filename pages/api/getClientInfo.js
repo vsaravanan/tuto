@@ -21,22 +21,13 @@ export default async (req, res) => {
   try {
     // Fetch IP address
 
-    const ipResponse = await axios.get('https://api.ipify.org?format=json')
-    const ipAddress = await ipResponse.ip
+    const {
+      data: { ip: ipAddress },
+    } = await axios.get('https://api.ipify.org?format=json')
+    // const ipAddress = data.ip
     const fingerprint = generateFingerprint(req)
 
-    // Generate fingerprint
-
-    // const getDeviceFingerprint = async () => {
-    //   const fp = FingerprintJS.load()
-    //   const result = fp.get()
-    //   const visitorId = result.visitorId
-    //   return visitorId
-    // }
-    // const fingerprint = await getDeviceFingerprint()
-
     res.status(200).json({
-      // ip: ipData.ip,
       ipAddress,
       fingerprint,
     })
@@ -44,3 +35,13 @@ export default async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch client information' })
   }
 }
+
+// Generate fingerprint
+
+// const getDeviceFingerprint = async () => {
+//   const fp = FingerprintJS.load()
+//   const result = fp.get()
+//   const visitorId = result.visitorId
+//   return visitorId
+// }
+// const fingerprint = await getDeviceFingerprint()

@@ -5,7 +5,7 @@ export const getClientInfoCmn = async () => {
     const data = res.data
 
     return {
-      ipAddress: data.ipAddress || null,
+      ipAddress: data.ip || null,
       fingerprint: data.fingerprint.fingerprint || null,
     }
   } catch (error) {

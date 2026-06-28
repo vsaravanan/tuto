@@ -1,13 +1,13 @@
 import { Card } from '@/components/Card'
 
 import 'styles/cards.css'
-import data from 'db/data'
+import carddata from '@/db/carddata'
 
 const Cards = () => {
   return (
     <>
       <div className='container'>
-        {data.map((card, i) => (
+        {carddata.map((card, i) => (
           <Card key={i} card={card} />
         ))}
       </div>

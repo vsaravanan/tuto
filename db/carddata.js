@@ -1,4 +1,4 @@
-const data = []
+const carddata = []
 let card = {}
 
 card = {
@@ -21,7 +21,7 @@ card = {
     { realtime: '/realtime.html' },
   ],
 }
-data.push(card)
+carddata.push(card)
 //
 
 card = {
@@ -36,7 +36,7 @@ card = {
     { angular: 'https://angular.saravanjs.com/' },
   ],
 }
-data.push(card)
+carddata.push(card)
 //
 
 card = {
@@ -63,7 +63,7 @@ card = {
     },
   ],
 }
-data.push(card)
+carddata.push(card)
 //
 
 card = {
@@ -106,7 +106,7 @@ card = {
     },
   ],
 }
-data.push(card)
+carddata.push(card)
 //
 
 card = {
@@ -123,7 +123,7 @@ card = {
   github: 'https://github.com/vsaravanan/uniqlo-shop',
   testpages: [{ 'uniqlo nextjs shopping cart': 'https://nextjs.saravanjs.com/' }],
 }
-data.push(card)
+carddata.push(card)
 //
 
 card = {
@@ -159,7 +159,7 @@ card = {
     },
   ],
 }
-data.push(card)
+carddata.push(card)
 //
 
 card = {
@@ -180,7 +180,7 @@ card = {
   testpages: [{ 'loginpage to test': 'https://tuton.saravanjs.com/' }],
   videos: [{ 'loginpage demo video': 'https://saravanjs.com:10401/loginpage.mp4' }],
 }
-data.push(card)
+carddata.push(card)
 //
 
 card = {
@@ -215,7 +215,7 @@ card = {
     },
   ],
 }
-data.push(card)
+carddata.push(card)
 //
 
 card = {
@@ -272,7 +272,7 @@ card = {
     },
   ],
 }
-data.push(card)
+carddata.push(card)
 
 //
 
@@ -449,7 +449,7 @@ card = {
     },
   ],
 }
-data.push(card)
+carddata.push(card)
 
 // {
 //   'mini_max_sum': {
@@ -460,8 +460,8 @@ data.push(card)
 // },
 
 card = {
-  testpages: [{ 'Rest vs Message': 'https://saravanjs.com:8001/microservices/restVsMessage.pdf' }],
+  testpages: [{ 'Rest vs Message': 'https://web.saravanjs.com/microservices/restVsMessage.pdf' }],
 }
-data.push(card)
+carddata.push(card)
 
-export default data
+export default carddata
