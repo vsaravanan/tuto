@@ -17,8 +17,8 @@ export const transformPdfData = pdfData => {
     const parts = pdf.split('/')
     if (parts.length < 2) return
 
-    const folder = parts[0]
-    const file = parts[1]
+    const folder = parts.shift()
+    const file = parts.pop()
 
     if (!grouped[folder]) {
       grouped[folder] = []
