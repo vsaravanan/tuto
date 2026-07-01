@@ -11,6 +11,8 @@ import { Sidebar } from 'components/Sidebar'
 import useUtilStore from '@/redux/utilSlice'
 import Link from 'next/link'
 
+import MarkdownPreview from './MarkdownPreview'
+
 const Layout = ({ children }) => {
   const { isLoading, error } = useSelector(state => state.posts)
   const statuso = useStatusoStore(state => state.statuso)
@@ -23,10 +25,14 @@ const Layout = ({ children }) => {
   let listurl = process.env.NEXT_PUBLIC_listskills
   let externalurl = process.env.NEXT_PUBLIC_serverjs
 
-  let url = content !== '' ? `${listurl}${content}.htm` : ''
+  let url = content !== '' ? `${listurl}${content}` : ''
+  const isMd = content.endsWith('.md')
+
+  const renderPreview = () => {
+    return isMd ? <MarkdownPreview filePath={url} /> : ''
+  }
 
   let angular = content.startsWith('angularjs/angularjs1')
-  // console.log(content + '  ' + angular)
 
   const openExternalPage = (title, url) => {
     let mytitle = encodeURIComponent(title)
@@ -50,6 +56,8 @@ const Layout = ({ children }) => {
 
   const show_sidebar = showSidebar ? 'sidebar-open' : 'sidebar-close'
 
+  const mdHtml = renderPreview()
+
   return (
     <div>
       <Header />
@@ -72,6 +80,8 @@ const Layout = ({ children }) => {
                 <main>
                   {children && content === '' ? (
                     children
+                  ) : isMd ? (
+                    mdHtml
                   ) : (
                     <>
                       <iframe
@@ -88,6 +98,7 @@ const Layout = ({ children }) => {
                         height='100%'
                         // sandbox='allow-same-origin allow-forms allow-scripts allow-popups allow-top-navigation allow-top-navigation-by-user-activation'
                       ></iframe>
+
                       {!angular ? (
                         ''
                       ) : (

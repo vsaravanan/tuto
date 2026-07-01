@@ -56,7 +56,8 @@ const TreeNode = ({ id, node }) => {
         <span
           className={'sidebar'}
           onClick={() => {
-            setContent(node.fullPath)
+            const filename = node.fullPath?.endsWith('.md') ? node.fullPath : node.fullPath + '.htm'
+            setContent(filename)
           }}
         >
           {node.name}
